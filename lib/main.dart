@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:adaptive_theme/adaptive_theme.dart';
 
 import 'component/component.dart';
+import 'config/config.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
+  setupRouter();
   runApp(MyApp(savedThemeMode: savedThemeMode ?? AdaptiveThemeMode.light));
 
 }

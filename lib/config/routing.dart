@@ -1,23 +1,54 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_webapp/pages/pages.dart';
+import 'package:go_router/go_router.dart';
+part 'routing.g.dart';
 
-const String skillsRoute = 'skills';
-const String projectsRoute = 'projects';
-const String educationRoute = 'education';
-const String achievementsRoute = 'achievements';
-const String contactRoute = 'contact';
-const String blogRoute = 'blogs';
-const String homeRoute = 'Home';
+const String skillsRoute = '/skills';
+const String projectsRoute = '/projects';
+const String educationRoute = '/education';
+const String achievementsRoute = '/achievements';
+const String contactRoute = '/contact';
+const String blogRoute = '/blogs';
+const String profileRoute = '/profile';
 const String dashBoard = '/';
 
-Route<dynamic> generateRoute(RouteSettings settings) {
-  switch (settings.name) {
-    case homeRoute:
-      return _getPageRoute(const HomePage(), settings.name ?? "");
-    default:
-      return _getPageRoute(const HomePage(), settings.name ?? "");
+
+final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
+
+@TypedShellRoute<DashboardShellRoute>(
+  routes: <TypedRoute<RouteData>>[
+    TypedGoRoute<HomeRoute>(
+      path: dashBoard,
+      routes: [
+        // TypedGoRoute<ItemDetailsRoute>(path: 'items/:id'),
+      ],
+    ),
+    TypedGoRoute<ProfileRoute>(path: profileRoute),
+  ],
+)
+
+class DashboardShellRoute extends ShellRouteData {
+  const DashboardShellRoute();
+
+  static final GlobalKey<NavigatorState> $navigatorKey = shellNavigatorKey;
+
+  @override
+  Widget builder(BuildContext context, GoRouterState state, Widget navigator) {
+    return MyDashboardScreen(child: navigator);
   }
+}
+
+class HomeRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) => const HomeScreen();
+}
+
+
+class ProfileRoute extends GoRouteData {
+  @override
+  Widget build(BuildContext context, GoRouterState state) =>
+      const ProfileScreen();
 }
 
 PageRoute _getPageRoute(Widget child, String routeName) {

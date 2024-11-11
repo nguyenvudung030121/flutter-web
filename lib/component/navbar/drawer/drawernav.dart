@@ -5,8 +5,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../navigationbar.dart';
 
-class NavigationDrawer extends StatelessWidget {
-  const NavigationDrawer({Key? key}) : super(key: key);
+class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,10 +16,10 @@ class NavigationDrawer extends StatelessWidget {
         child: Column(
           children: <Widget>[
             DrawerItem(StringConstants.home, FontAwesomeIcons.house, NavbarRoutes.home),
-            DrawerItem(StringConstants.skills, FontAwesomeIcons.listCheck, NavbarRoutes.skills),
-            DrawerItem(StringConstants.education, FontAwesomeIcons.graduationCap, NavbarRoutes.education),
-            DrawerItem(StringConstants.achievements, FontAwesomeIcons.trophy, NavbarRoutes.achievements),
-            DrawerItem(StringConstants.blogs, FontAwesomeIcons.bloggerB, NavbarRoutes.blog),
+            DrawerItem(StringConstants.whoWeAre, FontAwesomeIcons.listCheck, NavbarRoutes.whoWeAre),
+            DrawerItem(StringConstants.whatWeDo, FontAwesomeIcons.graduationCap, NavbarRoutes.whatWeDo),
+            DrawerItem(StringConstants.dedicatedTeam, FontAwesomeIcons.trophy, NavbarRoutes.dedicatedTeam),
+            DrawerItem(StringConstants.ourBlog, FontAwesomeIcons.bloggerB, NavbarRoutes.ourWork),
             DrawerItem(StringConstants.contact, FontAwesomeIcons.user, NavbarRoutes.contact),
           ],
         ),

@@ -10,7 +10,7 @@ const String educationRoute = '/education';
 const String achievementsRoute = '/achievements';
 const String contactRoute = '/contact';
 const String blogRoute = '/blogs';
-const String profileRoute = '/profile';
+const String whoWeAre = '/who-we-are';
 const String dashBoard = '/';
 
 
@@ -24,7 +24,7 @@ final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
         // TypedGoRoute<ItemDetailsRoute>(path: 'items/:id'),
       ],
     ),
-    TypedGoRoute<ProfileRoute>(path: profileRoute),
+    TypedGoRoute<ProfileRoute>(path: whoWeAre),
   ],
 )
 

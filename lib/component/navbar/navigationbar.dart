@@ -1,38 +1,18 @@
-import 'dart:html' as html;
-
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webapp/component/component.dart';
+import 'package:flutter_webapp/config/config.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:go_router/go_router.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 import '../../utils/utils.dart';
 import 'logo/navbarlogo.dart';
 
-enum NavbarRoutes { home, skills, education, achievements, blog, contact }
+enum NavbarRoutes { home, whoWeAre, whatWeDo, dedicatedTeam, ourWork, ourBlog, contact }
 
-class NavbarItem extends StatelessWidget {
-  final String title;
-  final NavbarRoutes navbarRoutes;
-
-  const NavbarItem(this.title, this.navbarRoutes, {Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        // locator<NavigationService>().navigateTo(navigationPath);
-      },
-      child: Text(
-        title,
-        style: const TextStyle(fontSize: 18),
-      ),
-    );
-  }
-}
-
-class NavigationBar extends StatelessWidget {
-  const NavigationBar({Key? key}) : super(key: key);
+class CustomNavigationBar extends StatelessWidget {
+  const CustomNavigationBar({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,20 +27,30 @@ class NavigationBar extends StatelessWidget {
 class NavbarTbDt extends StatelessWidget {
   const NavbarTbDt({Key? key}) : super(key: key);
 
+  NavbarRoutes getCurrentRoute(BuildContext context) {
+    final String location = GoRouterState.of(context).uri.path;
+    if (location.startsWith(whoWeAre)) {
+      return NavbarRoutes.whoWeAre;
+    }
+    return NavbarRoutes.home;
+  }
+
   final colDivider = const SizedBox(
-    width: 30,
+    width: 20,
   );
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    final NavbarRoutes selectedIndex = getCurrentRoute(context);
+    return Container(
       height: 50,
+      margin: const EdgeInsets.only(top: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           GestureDetector(
               onTap: () {
-                html.window.location.reload();
+                HomeRoute().go(context);
               },
               child: const NavbarLogo()),
           SingleChildScrollView(
@@ -68,23 +58,32 @@ class NavbarTbDt extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                const NavbarItem(StringConstants.home, NavbarRoutes.home),
+                NavbarItem(StringConstants.whoWeAre, NavbarRoutes.whoWeAre,
+                    isSelected: selectedIndex == NavbarRoutes.whoWeAre),
                 colDivider,
-                const NavbarItem(StringConstants.skills, NavbarRoutes.skills),
+                NavbarItem(StringConstants.whatWeDo, NavbarRoutes.whatWeDo,
+                    isSelected: selectedIndex == NavbarRoutes.whatWeDo),
                 colDivider,
-                const NavbarItem(StringConstants.achievements, NavbarRoutes.achievements),
+                NavbarItem(StringConstants.dedicatedTeam, NavbarRoutes.dedicatedTeam,
+                    isSelected: selectedIndex == NavbarRoutes.dedicatedTeam),
                 colDivider,
-                const NavbarItem(StringConstants.education, NavbarRoutes.education),
+                NavbarItem(StringConstants.ourWork, NavbarRoutes.ourWork,
+                    isSelected: selectedIndex == NavbarRoutes.ourWork),
                 colDivider,
-                const NavbarItem(StringConstants.blogs, NavbarRoutes.blog),
+                NavbarItem(StringConstants.ourBlog, NavbarRoutes.ourBlog,
+                    isSelected: selectedIndex == NavbarRoutes.ourBlog),
                 colDivider,
-                const NavbarItem(StringConstants.contact, NavbarRoutes.contact),
-                colDivider,
+                NavbarItem(StringConstants.contact, NavbarRoutes.contact,
+                    isSelected: selectedIndex == NavbarRoutes.contact),
                 IconButton(
                   onPressed: () {
                     AdaptiveTheme.of(context).toggleThemeMode();
                   },
-                  icon: const Icon(Icons.brightness_3, size: 25),
+                  icon: const Icon(
+                    Icons.brightness_3,
+                    size: 25,
+                    color: Colors.lightBlueAccent,
+                  ),
                 ),
               ],
             ),
@@ -108,7 +107,7 @@ class NavbarMob extends StatelessWidget {
         children: <Widget>[
           GestureDetector(
               onTap: () {
-                html.window.location.reload();
+                HomeRoute().go(context);
               },
               child: const NavbarLogo()),
           Expanded(
@@ -132,6 +131,49 @@ class NavbarMob extends StatelessWidget {
             },
           ),
         ],
+      ),
+    );
+  }
+}
+
+class NavbarItem extends StatelessWidget {
+  final String title;
+  final NavbarRoutes navbarRoutes;
+  final bool isSelected;
+
+  const NavbarItem(this.title, this.navbarRoutes, {Key? key, this.isSelected = false}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+      onPressed: () {
+        switch (navbarRoutes) {
+          case NavbarRoutes.home:
+            HomeRoute().go(context);
+            break;
+          case NavbarRoutes.whoWeAre:
+            ProfileRoute().go(context);
+            break;
+          case NavbarRoutes.whatWeDo:
+            // TODO: Handle this case.
+            break;
+          case NavbarRoutes.dedicatedTeam:
+            // TODO: Handle this case.
+            break;
+          case NavbarRoutes.ourWork:
+            // TODO: Handle this case.
+            break;
+          case NavbarRoutes.contact:
+            // TODO: Handle this case.
+            break;
+          case NavbarRoutes.ourBlog:
+            // TODO: Handle this case.
+            break;
+        }
+      },
+      child: Text(
+        title,
+        style: TextStyle(fontSize: 18, color: isSelected ? Colors.lightBlueAccent : Colors.black),
       ),
     );
   }

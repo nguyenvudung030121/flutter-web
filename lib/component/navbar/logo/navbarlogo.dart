@@ -55,7 +55,6 @@ class NavbarLogoDesk extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SizedBox(
         height: 80,
-        width: 500,
         child: Row(
           children: [
             Text(

@@ -17,13 +17,6 @@ class LayoutTemplate extends StatelessWidget {
         body: Column(
           children: <Widget>[
             // custom_navbar.NavigationBar(),
-            Expanded(
-              child: Navigator(
-                key: locator<NavigationService>().navigatorKey,
-                onGenerateRoute: generateRoute,
-                initialRoute: homeRoute,
-              ),
-            )
           ],
         ),
       ),

@@ -1,2 +1,1 @@
-export 'centeredview.dart';
-export 'layoutpage.dart';
+export 'responsive_view.dart';

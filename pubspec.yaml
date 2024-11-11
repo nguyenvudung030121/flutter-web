@@ -48,7 +48,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^4.0.0
   cupertino_icons: ^1.0.5
-  responsive_builder: ^0.4.0
+  responsive_builder: ^0.7.1
   font_awesome_flutter: ^10.1.0
   google_fonts: ^6.2.1
   flutter_rounded_progress_bar: 0.3.2

@@ -7,10 +7,10 @@ class NavbarLogo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout(
-      mobile: const NavbarLogoMob(),
-      tablet: const NavbarLogoMob(),
-      desktop: const NavbarLogoDesk(),
+    return ScreenTypeLayout.builder(
+      mobile: (BuildContext context) => const NavbarLogoMob(),
+      tablet: (BuildContext context) => const NavbarLogoMob(),
+      desktop: (BuildContext context) => const NavbarLogoDesk(),
     );
   }
 }
@@ -22,25 +22,12 @@ class NavbarLogoMob extends StatelessWidget {
   Widget build(BuildContext context) {
     return const SizedBox(
         height: 80,
-        width: 200,
         child: Row(
           children: [
-            Text(
-              '<',
-              style: TextStyle(fontSize: 20),
-            ),
             Text(
               StringConstants.appName,
               style: TextStyle(color: Colors.blueAccent, fontSize: 20, fontFamily: 'Agustina'),
             ),
-            Text(
-              '/',
-              style: TextStyle(color: Colors.grey, fontSize: 20),
-            ),
-            Text(
-              '>',
-              style: TextStyle(fontSize: 20),
-            )
           ],
         )
         //Image.asset('assets/images/logo.png'),
@@ -53,26 +40,15 @@ class NavbarLogoDesk extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
+    return SizedBox(
         height: 80,
-        child: Row(
+        width: MediaQuery.of(context).size.width * 0.2,
+        child: const Row(
           children: [
-            Text(
-              '<',
-              style: TextStyle(fontSize: 30),
-            ),
             Text(
               StringConstants.appName,
               style: TextStyle(color: Colors.blueAccent, fontSize: 30, fontFamily: 'Agustina'),
             ),
-            Text(
-              '/',
-              style: TextStyle(color: Colors.grey, fontSize: 40),
-            ),
-            Text(
-              '>',
-              style: TextStyle(fontSize: 30),
-            )
           ],
         )
         //Image.asset('assets/images/logo.png'),

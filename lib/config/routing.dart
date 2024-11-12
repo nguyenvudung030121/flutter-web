@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_webapp/pages/pages.dart';
 import 'package:go_router/go_router.dart';
+
 part 'routing.g.dart';
 
 const String skillsRoute = '/skills';
@@ -13,7 +14,6 @@ const String blogRoute = '/blogs';
 const String whoWeAre = '/who-we-are';
 const String dashBoard = '/';
 
-
 final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
 
 @TypedShellRoute<DashboardShellRoute>(
@@ -24,10 +24,9 @@ final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
         // TypedGoRoute<ItemDetailsRoute>(path: 'items/:id'),
       ],
     ),
-    TypedGoRoute<ProfileRoute>(path: whoWeAre),
+    TypedGoRoute<WhoWeAreRoute>(path: whoWeAre),
   ],
 )
-
 class DashboardShellRoute extends ShellRouteData {
   const DashboardShellRoute();
 
@@ -44,11 +43,9 @@ class HomeRoute extends GoRouteData {
   Widget build(BuildContext context, GoRouterState state) => const HomeScreen();
 }
 
-
-class ProfileRoute extends GoRouteData {
+class WhoWeAreRoute extends GoRouteData {
   @override
-  Widget build(BuildContext context, GoRouterState state) =>
-      const ProfileScreen();
+  Widget build(BuildContext context, GoRouterState state) => const ProfileScreen();
 }
 
 PageRoute _getPageRoute(Widget child, String routeName) {

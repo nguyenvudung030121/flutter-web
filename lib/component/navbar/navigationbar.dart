@@ -2,6 +2,7 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webapp/component/component.dart';
 import 'package:flutter_webapp/config/config.dart';
+import 'package:flutter_webapp/utils/text_utils.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -16,16 +17,16 @@ class CustomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout(
-      mobile: const ResponsiveViewMobile(child: NavbarMob()),
-      tablet: const ResponsiveViewTablet(child: NavbarMob()),
-      desktop: const ResponsiveViewDesktop(child: NavbarTbDt()),
+    return ScreenTypeLayout.builder(
+      mobile: (BuildContext context) => const ResponsiveViewMobile(child: NavbarMob()),
+      tablet: (BuildContext context) => const ResponsiveViewMobile(child: NavbarMob()),
+      desktop: (BuildContext context) => const ResponsiveViewDesktop(child: NavbarDesktop()),
     );
   }
 }
 
-class NavbarTbDt extends StatelessWidget {
-  const NavbarTbDt({Key? key}) : super(key: key);
+class NavbarDesktop extends StatelessWidget {
+  const NavbarDesktop({Key? key}) : super(key: key);
 
   NavbarRoutes getCurrentRoute(BuildContext context) {
     final String location = GoRouterState.of(context).uri.path;
@@ -36,7 +37,7 @@ class NavbarTbDt extends StatelessWidget {
   }
 
   final colDivider = const SizedBox(
-    width: 20,
+    width: 15,
   );
 
   @override
@@ -44,19 +45,25 @@ class NavbarTbDt extends StatelessWidget {
     final NavbarRoutes selectedIndex = getCurrentRoute(context);
     return Container(
       height: 50,
+      padding: const EdgeInsets.symmetric(horizontal: SpacingUtils.extraLarge),
       margin: const EdgeInsets.only(top: 10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisSize: MainAxisSize.max,
         children: <Widget>[
-          GestureDetector(
-              onTap: () {
-                HomeRoute().go(context);
-              },
-              child: const NavbarLogo()),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
+          Expanded(
+            flex: 1,
+            child: GestureDetector(
+                onTap: () {
+                  HomeRoute().go(context);
+                },
+                child: const NavbarLogo()),
+          ),
+          Expanded(
+            flex: 2,
+            child: Wrap(
+              crossAxisAlignment: WrapCrossAlignment.center,
+              alignment: WrapAlignment.end,
               children: <Widget>[
                 NavbarItem(StringConstants.whoWeAre, NavbarRoutes.whoWeAre,
                     isSelected: selectedIndex == NavbarRoutes.whoWeAre),
@@ -136,7 +143,7 @@ class NavbarMob extends StatelessWidget {
   }
 }
 
-class NavbarItem extends StatelessWidget {
+class NavbarItem extends StatefulWidget {
   final String title;
   final NavbarRoutes navbarRoutes;
   final bool isSelected;
@@ -144,15 +151,29 @@ class NavbarItem extends StatelessWidget {
   const NavbarItem(this.title, this.navbarRoutes, {Key? key, this.isSelected = false}) : super(key: key);
 
   @override
+  State<NavbarItem> createState() => _NavbarItemState();
+}
+
+class _NavbarItemState extends State<NavbarItem> {
+  late TextStyle textStyle;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    textStyle = TextUtils.navBarStyle(widget.isSelected, false);
+  }
+  @override
   Widget build(BuildContext context) {
+
     return TextButton(
       onPressed: () {
-        switch (navbarRoutes) {
+        switch (widget.navbarRoutes) {
           case NavbarRoutes.home:
             HomeRoute().go(context);
             break;
           case NavbarRoutes.whoWeAre:
-            ProfileRoute().go(context);
+            WhoWeAreRoute().go(context);
             break;
           case NavbarRoutes.whatWeDo:
             // TODO: Handle this case.
@@ -171,9 +192,20 @@ class NavbarItem extends StatelessWidget {
             break;
         }
       },
+      onHover: (value) {
+        if (value) {
+          setState(() {
+            textStyle = TextUtils.navBarStyle(widget.isSelected, true);
+          });
+        } else {
+          setState(() {
+            textStyle = TextUtils.navBarStyle(widget.isSelected, false);
+          });
+        }
+      },
       child: Text(
-        title,
-        style: TextStyle(fontSize: 18, color: isSelected ? Colors.lightBlueAccent : Colors.black),
+        widget.title,
+        style: textStyle,
       ),
     );
   }

@@ -1,15 +1,19 @@
 import 'package:adaptive_theme/adaptive_theme.dart' show AdaptiveTheme, AdaptiveThemeMode;
 import 'package:flutter/material.dart';
+import 'package:flutter_webapp/utils/string_constants.dart';
 import 'package:go_router/go_router.dart';
 import 'config/config.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
-
+import 'package:responsive_builder/responsive_builder.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final savedThemeMode = await AdaptiveTheme.getThemeMode();
   usePathUrlStrategy();
   GoRouter.optionURLReflectsImperativeAPIs = true;
+  ResponsiveSizingConfig.instance.setCustomBreakpoints(
+    const ScreenBreakpoints(desktop: 1200, tablet: 1000, watch: 200),
+  );
   runApp(MyApp(savedThemeMode: savedThemeMode ?? AdaptiveThemeMode.light));
 
 }
@@ -56,7 +60,7 @@ class _MyAppState extends State<MyApp> {
       initial: widget.savedThemeMode,
       builder: (theme, darkTheme) => MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        title: 'Madison Technologies',
+        title: StringConstants.appName,
         theme: theme,
         darkTheme: darkTheme,
         routerConfig: _router,

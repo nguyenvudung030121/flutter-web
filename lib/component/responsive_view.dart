@@ -7,10 +7,10 @@ class ResponsiveView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ScreenTypeLayout(
-      desktop: const ResponsiveViewDesktop(child: null,),
-      tablet: const ResponsiveViewTablet(),
-      mobile: const ResponsiveViewMobile(),
+    return ScreenTypeLayout.builder(
+      desktop: (BuildContext context) => const ResponsiveViewDesktop(child: null,),
+      tablet: (BuildContext context) => const ResponsiveViewMobile(),
+      mobile: (BuildContext context) => const ResponsiveViewMobile(),
     );
   }
 }
@@ -22,7 +22,7 @@ class ResponsiveViewDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 70, vertical: 10),
+      padding: const EdgeInsets.symmetric( vertical: 10),
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 2000),
         child: child,
@@ -38,7 +38,7 @@ class ResponsiveViewMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
       child: ConstrainedBox(
         constraints: const BoxConstraints(maxWidth: 1200),
         child: child,

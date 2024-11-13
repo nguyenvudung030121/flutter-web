@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+enum FontSourceSansPro { regular, bold, semiBold }
+
+enum FontAlfa { regular}
 
 class TextUtils {
   static String capitalize(String text) {
@@ -17,6 +20,20 @@ class TextUtils {
   }
 
   static TextStyle headerStyle() {
-    return const TextStyle(fontSize: 60, color: Colors.lightBlueAccent, fontWeight: FontWeight.w800);
+    return const TextStyle(fontSize: 60, color: Colors.lightBlueAccent, fontWeight: FontWeight.w800, height: 1.2,
+        fontFamily: 'AlfaSlabOne', letterSpacing: 2);
+  }
+
+  static TextStyle defaultStyle() {
+    return const TextStyle(fontSize: 27, color: Colors.black, fontWeight: FontWeight.w400, height: 1.5,
+        fontFamily: 'SourceSansPro');
+  }
+
+  static String fontFamily(FontSourceSansPro fontSourceSansPro) {
+    return fontSourceSansPro == FontSourceSansPro.regular
+        ? 'SourceSansPro'
+        : fontSourceSansPro == FontSourceSansPro.bold
+            ? 'SourceSansProBold'
+            : 'SourceSansProSemiBold';
   }
 }

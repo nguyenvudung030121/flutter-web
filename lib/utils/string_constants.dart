@@ -7,4 +7,6 @@ class StringConstants {
   static const String ourWork = 'OUR WORK';
   static const String ourBlog = 'OUR BLOG';
   static const String contact = 'CONTACT US';
+  static const String userName = 'Hi! Dung Nguyen';
+  static const String yourPropTech =  'Your PropTech Super App Solution';
 }

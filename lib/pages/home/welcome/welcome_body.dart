@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_webapp/utils/text_utils.dart';
 import 'package:flutter_webapp/utils/utils.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class WelcomePageDesk extends StatelessWidget {
   const WelcomePageDesk({Key? key}) : super(key: key);
+  final rowDividerDesk = const SizedBox(
+    height: 30,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class WelcomePageDesk extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 const Text(
-                  "Hi ! Dung Nguyen",
+                  StringConstants.userName,
                   style: TextStyle(fontWeight: FontWeight.w800, height: 1.3, fontSize: 50),
                   textAlign: TextAlign.center,
                 ),
@@ -32,7 +34,76 @@ class WelcomePageDesk extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text('Your PropTech Super App Solution', style: TextUtils.headerStyle(),),
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * 0.4,
+                  child: Text(
+                    StringConstants.yourPropTech,
+                    style: TextUtils.headerStyle(),
+                  ),
+                ),
+                rowDividerDesk,
+                RichText(
+                  text: TextSpan(
+                    style: TextUtils.defaultStyle(),
+                    children: [
+                      const TextSpan(text: 'We aim to be the '),
+                      TextSpan(
+                        text: '#1 provider of Super Apps',
+                        style: TextUtils.defaultStyle()
+                            .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),
+                      ),
+                      const TextSpan(text: ' for '),
+                      TextSpan(
+                        text: 'PropTech in Southeast Asia',
+                        style: TextUtils.defaultStyle()
+                            .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),
+                      ),
+                      const TextSpan(text: ', empowering enterprises with '),
+                      TextSpan(
+                        text: 'secure, innovative technology',
+                        style: TextUtils.defaultStyle()
+                            .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),
+                      ),
+                      const TextSpan(text: ' that drives efficiency and growth. With decades of expertise in '),
+                      TextSpan(
+                        text: 'PropTech and FinTech',
+                        style: TextUtils.defaultStyle()
+                            .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),
+                      ),
+                      const TextSpan(text: ' partnerships, we deliver '),
+                      TextSpan(
+                        text: 'Agile Applications',
+                        style: TextUtils.defaultStyle()
+                            .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),
+                      ),
+                      const TextSpan(text: ', optimized '),
+                      TextSpan(
+                        text: 'Cloud Computing',
+                        style: TextUtils.defaultStyle()
+                            .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),
+                      ),
+                      const TextSpan(text: ' services, and '),
+                      TextSpan(
+                        text: 'Robust Security',
+                        style: TextUtils.defaultStyle()
+                            .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),
+                      ),
+                      const TextSpan(
+                          text: ' solutions that transform business operations in an evolving digital landscape.'),
+                    ],
+                  ),
+                ),
+                rowDividerDesk,
+                Row(
+                  children: [
+                    Image.network('https://shareables-prod-static.clutch.co/badges/top_clutch'
+                        '.co_app_development_company_supply_chain_logistics_and_transport_singapore.svg'),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Image.network('https://shareables-prod-static.clutch.co/badges/top_clutch.co_it_services_company_retail_malaysia.svg'),
+                  ],
+                )
               ],
             ),
           )

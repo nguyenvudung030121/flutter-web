@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_webapp/utils/utils.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:jovial_svg/jovial_svg.dart';
 
 class WelcomePageDesk extends StatelessWidget {
   const WelcomePageDesk({Key? key}) : super(key: key);
@@ -96,12 +97,23 @@ class WelcomePageDesk extends StatelessWidget {
                 rowDividerDesk,
                 Row(
                   children: [
-                    Image.network('https://shareables-prod-static.clutch.co/badges/top_clutch'
-                        '.co_app_development_company_supply_chain_logistics_and_transport_singapore.svg'),
-                    const SizedBox(
-                      width: 20,
+                    ScalableImageWidget.fromSISource(
+                      scale: 0.15,
+                      si: ScalableImageSource.fromSvgHttpUrl(
+                        Uri.parse(
+                            'https://shareables-prod-static.clutch.co/badges/top_clutch.co_app_development_company_supply_chain_logistics_and_transport_singapore.svg'),
+                      ),
                     ),
-                    Image.network('https://shareables-prod-static.clutch.co/badges/top_clutch.co_it_services_company_retail_malaysia.svg'),
+                    const SizedBox(
+                      width: 30,
+                    ),
+                    ScalableImageWidget.fromSISource(
+                      scale: 0.15,
+                      si: ScalableImageSource.fromSvgHttpUrl(
+                        Uri.parse(
+                            'https://shareables-prod-static.clutch.co/badges/top_clutch.co_app_development_company_supply_chain_logistics_and_transport_singapore.svg'),
+                      ),
+                    ),
                   ],
                 )
               ],
@@ -129,7 +141,7 @@ class WelcomePageMob extends StatelessWidget {
             ),
             const Center(
               child: Text(
-                "Hi ! I'm Naveen Jujaray",
+                "Hi ! I'm Dung Nguyen",
                 style: TextStyle(fontWeight: FontWeight.w800, height: 1.3, fontSize: 32),
                 textAlign: TextAlign.justify,
               ),
@@ -139,7 +151,7 @@ class WelcomePageMob extends StatelessWidget {
             ),
             const Center(
               child: Text(
-                "I help out Spider-man with his web slingers, or you could call me a web designer.",
+                "This is mobile view.",
                 style: TextStyle(
                   fontSize: 16,
                   height: 1.7,

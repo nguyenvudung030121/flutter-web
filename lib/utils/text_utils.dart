@@ -20,7 +20,7 @@ class TextUtils {
   }
 
   static TextStyle headerStyle() {
-    return const TextStyle(fontSize: 60, color: Colors.lightBlueAccent, fontWeight: FontWeight.w800, height: 1.2,
+    return const TextStyle(fontSize: 54, color: Colors.lightBlueAccent, fontWeight: FontWeight.w800, height: 1.2,
         fontFamily: 'AlfaSlabOne', letterSpacing: 2);
   }
 

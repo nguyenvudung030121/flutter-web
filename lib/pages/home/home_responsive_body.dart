@@ -4,6 +4,7 @@ import 'package:flutter_webapp/pages/home/client_banner/banner.dart';
 import 'package:flutter_webapp/utils/string_constants.dart';
 import 'package:flutter_webapp/utils/text_utils.dart';
 
+import 'featured_work/featured_work_page.dart';
 import 'welcome/welcome.dart';
 
 class HomeDesktop extends StatefulWidget {
@@ -70,8 +71,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
             ),
             rowDivider,
             const BannerPage(),
-            const WelcomePage(),
-
+            rowDivider,
+            const FeaturedWorkPage(),
             // Row(
             //   children: <Widget>[
             //     Expanded(child: TwoDesk()),

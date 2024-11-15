@@ -33,7 +33,16 @@ class StringConstants {
       'We build hybrid and native applications on both iOS and Android that are snappy and scalable.';
   static const String uxUi = 'UI/UX Design Excellence';
   static const String uxUiContent = 'Our design team follows Design Thinking to create intuitive, engaging experiences, ensuring users love interacting with your property tech or fintech app.';
-  
+  static const String needMoreResources = 'Need more resources?';
+  static const String needMoreResourcesContent =
+      'We provide trained and dedicated resources to help you get that website or mobile app launched. Whether it’s a bundle package of engineers, QA analysts, a technical lead and a project manager or QAs only, we’ve got you covered. Find out more about the different types of dedicated resources we provide.';
+  static const String developmentBundle = 'Development Bundle';
+  static const String developmentBundleContent =
+      'Package deal of engineers, QAs, a technical lead and a project manager.';
+  static const String findOutMore = 'Find Out More';
+  static const String qaSupport = 'QA Support';
+  static const String qaSupportContent = 'Our seasoned QAs help to fill in the gap between your stakeholders and engineers.';
+
 
 
 

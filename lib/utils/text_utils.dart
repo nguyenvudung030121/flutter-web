@@ -8,6 +8,15 @@ class TextUtils {
     return text[0].toUpperCase() + text.substring(1);
   }
 
+  static String capitalizeFirstCharOfWords(String sentence) {
+    return sentence.split(' ').map((word) {
+      if (word.isNotEmpty) {
+        return word[0].toUpperCase() + word.substring(1).toLowerCase();
+      }
+      return word;
+    }).join(' ');
+  }
+
   static TextStyle navBarStyle(bool isSelected, bool isHover) {
     return TextStyle(
         fontSize: 15,
@@ -24,8 +33,13 @@ class TextUtils {
         fontFamily: 'AlfaSlabOne', letterSpacing: 2);
   }
 
-  static TextStyle defaultStyle() {
+  static TextStyle contentStyle() {
     return const TextStyle(fontSize: 27, color: Colors.black, fontWeight: FontWeight.w400, height: 1.5,
+        fontFamily: 'SourceSansPro');
+  }
+
+  static TextStyle defaultStyle() {
+    return const TextStyle(fontSize: 23, color: Colors.black, fontWeight: FontWeight.w400, height: 1.5,
         fontFamily: 'SourceSansPro');
   }
 

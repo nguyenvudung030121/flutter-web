@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_webapp/component/component.dart';
 import 'package:flutter_webapp/pages/home/client_banner/banner.dart';
+import 'package:flutter_webapp/pages/home/what_we_do/what_we_do_page.dart';
 import 'package:flutter_webapp/utils/string_constants.dart';
 import 'package:flutter_webapp/utils/text_utils.dart';
 
@@ -73,6 +74,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
             const BannerPage(),
             rowDivider,
             const FeaturedWorkPage(),
+            rowDivider,
+            const WhatWeDoPage(),
             // Row(
             //   children: <Widget>[
             //     Expanded(child: TwoDesk()),

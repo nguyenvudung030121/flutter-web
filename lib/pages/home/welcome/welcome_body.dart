@@ -45,48 +45,48 @@ class WelcomePageDesk extends StatelessWidget {
                 rowDividerDesk,
                 RichText(
                   text: TextSpan(
-                    style: TextUtils.defaultStyle(),
+                    style: TextUtils.contentStyle(),
                     children: [
                       const TextSpan(text: 'We aim to be the '),
                       TextSpan(
                         text: '#1 provider of Super Apps',
-                        style: TextUtils.defaultStyle()
+                        style: TextUtils.contentStyle()
                             .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),
                       ),
                       const TextSpan(text: ' for '),
                       TextSpan(
                         text: 'PropTech in Southeast Asia',
-                        style: TextUtils.defaultStyle()
+                        style: TextUtils.contentStyle()
                             .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),
                       ),
                       const TextSpan(text: ', empowering enterprises with '),
                       TextSpan(
                         text: 'secure, innovative technology',
-                        style: TextUtils.defaultStyle()
+                        style: TextUtils.contentStyle()
                             .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),
                       ),
                       const TextSpan(text: ' that drives efficiency and growth. With decades of expertise in '),
                       TextSpan(
                         text: 'PropTech and FinTech',
-                        style: TextUtils.defaultStyle()
+                        style: TextUtils.contentStyle()
                             .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),
                       ),
                       const TextSpan(text: ' partnerships, we deliver '),
                       TextSpan(
                         text: 'Agile Applications',
-                        style: TextUtils.defaultStyle()
+                        style: TextUtils.contentStyle()
                             .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),
                       ),
                       const TextSpan(text: ', optimized '),
                       TextSpan(
                         text: 'Cloud Computing',
-                        style: TextUtils.defaultStyle()
+                        style: TextUtils.contentStyle()
                             .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),
                       ),
                       const TextSpan(text: ' services, and '),
                       TextSpan(
                         text: 'Robust Security',
-                        style: TextUtils.defaultStyle()
+                        style: TextUtils.contentStyle()
                             .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700),
                       ),
                       const TextSpan(

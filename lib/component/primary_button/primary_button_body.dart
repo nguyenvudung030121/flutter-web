@@ -39,7 +39,7 @@ class PrimaryButtonBodyDesk extends StatelessWidget {
         title,
         style: TextStyle(
           color: Colors.white,
-          fontSize: 4.sp,
+          fontSize: 3.5.sp,
           fontWeight: FontWeight.w400,
           fontFamily: TextUtils.fontFamily(FontSourceSansPro.semiBold),
         ),

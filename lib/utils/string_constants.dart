@@ -42,6 +42,8 @@ class StringConstants {
   static const String findOutMore = 'Find Out More';
   static const String qaSupport = 'QA Support';
   static const String qaSupportContent = 'Our seasoned QAs help to fill in the gap between your stakeholders and engineers.';
+  static const String testimonials = 'Testimonials';
+  static const String ourSuccessStories = 'Our Success stories';
 
 
 

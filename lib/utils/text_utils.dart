@@ -32,17 +32,17 @@ class TextUtils {
 
   static TextStyle headerStyle() {
     return TextStyle(
-        fontSize: 12.sp,
+        fontSize: 11.sp,
         color: Colors.lightBlueAccent,
         fontWeight: FontWeight.w800,
         height: 1.2,
         fontFamily: 'AlfaSlabOne',
-        letterSpacing: 2);
+        letterSpacing: 3);
   }
 
   static TextStyle contentStyle() {
-    return const TextStyle(
-        fontSize: 27, color: Colors.black, fontWeight: FontWeight.w400, height: 1.5, fontFamily: 'SourceSansPro');
+    return  TextStyle(
+        fontSize: 6.sp, color: Colors.black, fontWeight: FontWeight.w400, height: 1.5, fontFamily: 'SourceSansPro');
   }
 
   static TextStyle defaultStyle() {

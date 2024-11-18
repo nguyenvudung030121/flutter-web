@@ -32,7 +32,7 @@ class _WhatWeDoBodyDeskState extends State<WhatWeDoBodyDesk> {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: SpacingUtils.extraLarge),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Expanded(
             child: _buildWhatWeDoWidget(),

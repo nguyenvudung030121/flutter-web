@@ -1,10 +1,12 @@
 import 'package:adaptive_theme/adaptive_theme.dart' show AdaptiveTheme, AdaptiveThemeMode;
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:flutter_webapp/utils/string_constants.dart';
 import 'package:go_router/go_router.dart';
-import 'config/config.dart';
-import 'package:flutter_web_plugins/url_strategy.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+
+import 'config/config.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,12 +16,14 @@ Future<void> main() async {
   ResponsiveSizingConfig.instance.setCustomBreakpoints(
     const ScreenBreakpoints(desktop: 1200, tablet: 1000, watch: 200),
   );
-  runApp(MyApp(savedThemeMode: savedThemeMode ?? AdaptiveThemeMode.light));
-
+  runApp(ScreenUtilInit(
+    builder: (context, child) => MyApp(savedThemeMode: savedThemeMode ?? AdaptiveThemeMode.light),
+  ));
 }
 
 class MyApp extends StatefulWidget {
   final AdaptiveThemeMode savedThemeMode;
+
   const MyApp({Key? key, required this.savedThemeMode}) : super(key: key);
 
   @override

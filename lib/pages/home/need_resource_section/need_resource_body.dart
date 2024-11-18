@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_webapp/component/primary_button/primary_button.dart';
 import 'package:flutter_webapp/utils/utils.dart';
 
@@ -27,14 +28,11 @@ class NeedResourceBodyDesk extends StatelessWidget {
                     style: TextUtils.headerStyle().copyWith(color: Colors.black),
                   ),
                   const SizedBox(height: 20),
-                  Text(
-                    StringConstants.needMoreResourcesContent,
-                    style: TextUtils.defaultStyle(),
-                  ),
+                  Text(StringConstants.needMoreResourcesContent, style: TextUtils.defaultStyle()),
                 ],
               ),
             ),
-            const SizedBox(width: 30),
+            const SizedBox(width: 70),
             Expanded(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
@@ -65,7 +63,8 @@ class NeedResourceBodyDesk extends StatelessWidget {
 
   Widget buildContainerResource(String title, String content, String imageUrl) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      alignment: Alignment.center,
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -73,7 +72,12 @@ class NeedResourceBodyDesk extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 10),
-          Image.network(imageUrl),
+          Image.network(
+            imageUrl,
+            height: 60.h,
+            width: 60.w,
+            fit: BoxFit.contain,
+          ),
           const SizedBox(height: 30),
           Text(
             title,
@@ -88,7 +92,7 @@ class NeedResourceBodyDesk extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
-          PrimaryButton(title: StringConstants.findOutMore.toUpperCase()),
+          PrimaryButton(title: StringConstants.findOutMore.toUpperCase(), onPressed: () {}),
         ],
       ),
     );

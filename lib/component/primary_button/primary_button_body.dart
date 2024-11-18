@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_webapp/main.dart';
 import 'package:flutter_webapp/utils/text_utils.dart';
 
 class PrimaryButtonBodyDesk extends StatelessWidget {
@@ -37,7 +39,7 @@ class PrimaryButtonBodyDesk extends StatelessWidget {
         title,
         style: TextStyle(
           color: Colors.white,
-          fontSize: 18,
+          fontSize: 4.sp,
           fontWeight: FontWeight.w400,
           fontFamily: TextUtils.fontFamily(FontSourceSansPro.semiBold),
         ),

@@ -105,42 +105,27 @@ class NeedResourceBodyDesk extends StatelessWidget {
     );
   }
 
-  ElevatedButton buildElevatedButton() {
-    return ElevatedButton(
-          onPressed: () {},
-          style: ButtonStyle(
-            backgroundColor: WidgetStateProperty.all<Color>(Colors.lightBlueAccent),
-            shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(50),
-              ),
-            ),
-            elevation: WidgetStateProperty.all<double>(0),
-            overlayColor: WidgetStateProperty.resolveWith<Color?>(
-              (Set<WidgetState> states) {
-                if (states.contains(WidgetState.hovered)) {
-                  return Colors.blue.withOpacity(0.2); // Set your desired hover color here
-                }
-                return null; // Defer to the widget's default
-              },
-            ),
-            padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
-              const EdgeInsets.symmetric(
-                vertical: 18,
-                horizontal: 40,
-              ),
-            ),
+  Widget buildElevatedButton() {
+    return InkWell(
+      onTap: () {},
+      hoverColor: Colors.blue.withOpacity(0.2),
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
+        decoration: BoxDecoration(
+          color: Colors.lightBlueAccent,
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: Text(
+          StringConstants.findOutMore.toUpperCase(),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 3.5.sp,
+            fontWeight: FontWeight.w400,
+            letterSpacing: 1.5,
+            fontFamily: TextUtils.fontFamily(FontSourceSansPro.semiBold),
           ),
-          child: Text(
-            StringConstants.findOutMore.toUpperCase(),
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 3.5.sp,
-              fontWeight: FontWeight.w400,
-              letterSpacing: 1.5,
-              fontFamily: TextUtils.fontFamily(FontSourceSansPro.semiBold),
-            ),
-          ),
-        );
+        ),
+      ),
+    );
   }
 }

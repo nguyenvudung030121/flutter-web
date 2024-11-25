@@ -41,13 +41,26 @@ class TextUtils {
   }
 
   static TextStyle contentStyle() {
-    return  TextStyle(
+    return TextStyle(
         fontSize: 6.sp, color: Colors.black, fontWeight: FontWeight.w400, height: 1.5, fontFamily: 'SourceSansPro');
   }
 
   static TextStyle defaultStyle() {
     return TextStyle(
-        fontSize: 4.5.sp, color: Colors.black, fontWeight: FontWeight.w400, height: 1.5, fontFamily: 'SourceSansPro');
+        fontSize: 4.sp, color: Colors.black, fontWeight: FontWeight.w400, height: 1.5, fontFamily: 'SourceSansPro');
+  }
+
+  static TextStyle linkStyle() {
+    return TextStyle(
+      fontSize: 5.2.sp,
+      color: Colors.lightBlueAccent,
+      fontWeight: FontWeight.w400,
+      height: 1.5,
+      fontFamily: 'SourceS'
+          'ansProSemiBold',
+      decoration: TextDecoration.underline,
+      decorationColor: Colors.lightBlueAccent,
+    );
   }
 
   static String fontFamily(FontSourceSansPro fontSourceSansPro) {

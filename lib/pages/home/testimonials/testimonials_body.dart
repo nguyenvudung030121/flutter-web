@@ -32,7 +32,7 @@ class _TestimonialsBodyDesk extends State<TestimonialsBodyDesk> {
             child: CarouselSlider.builder(
               options: CarouselOptions(
                 height: 280.h,
-                autoPlay: true,
+                autoPlay: false,
                 initialPage: 0,
                 enableInfiniteScroll: true,
                 reverse: false,

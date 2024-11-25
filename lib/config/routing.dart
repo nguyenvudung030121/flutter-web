@@ -45,8 +45,10 @@ class HomeRoute extends GoRouteData {
 
 class WhoWeAreRoute extends GoRouteData {
   @override
-  Widget build(BuildContext context, GoRouterState state) => const ProfileScreen();
+  Widget build(BuildContext context, GoRouterState state) => const WhoAreWePage();
 }
+
+
 
 PageRoute _getPageRoute(Widget child, String routeName) {
   return _FadeRoute(child: child, routeName: routeName);

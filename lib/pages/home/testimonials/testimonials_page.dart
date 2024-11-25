@@ -4,8 +4,8 @@ import 'package:flutter_webapp/pages/home/testimonials/testimonials_body.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 
-class TesttimonialsPage extends StatelessWidget {
-  const TesttimonialsPage({Key? key}) : super(key: key);
+class TestimonialsPage extends StatelessWidget {
+  const TestimonialsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

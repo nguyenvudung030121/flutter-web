@@ -44,6 +44,20 @@ class StringConstants {
   static const String qaSupportContent = 'Our seasoned QAs help to fill in the gap between your stakeholders and engineers.';
   static const String testimonials = 'Testimonials';
   static const String ourSuccessStories = 'Our Success stories';
+  static const String contactUs = 'Contact Us';
+  static const String letUsTake = 'Let us take your projects to new heights!';
+  static const String letUsTakeContent =
+      'We are here to help you succeed. Let us know how we can help you identify the opportunities and challenges your product is facing.';
+  static const String submit = 'Submit';
+  static const String fullName = 'Full Name';
+  static const String howDidYouHearAboutUs = 'How did you hear about us';
+  static const String companyName = 'Company Name';
+  static const String email = 'Email';
+  static const String message = 'Message';
+  static const String phoneNumber = 'Phone Number';
+  static const String imLookingFor = 'I am Looking for';
+  static const String yourBattle = 'Your battle-hardened engineering team';
+  static const String yourBattleDesc = 'We’re your partners in building amazing digital product experiences that scale. We create design and develop solutions for the web and mobile platforms. Since our humble beginnings in 2019, we’ve got some pretty impressive creds under our belt.';
 
 
 

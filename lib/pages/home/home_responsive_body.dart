@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_webapp/component/component.dart';
 import 'package:flutter_webapp/pages/home/client_banner/banner.dart';
+import 'package:flutter_webapp/pages/home/contact/contact_page.dart';
 import 'package:flutter_webapp/pages/home/need_resource_section/need_resource_page.dart';
 import 'package:flutter_webapp/pages/home/testimonials/testimonials_page.dart';
 import 'package:flutter_webapp/pages/home/what_we_do/what_we_do_page.dart';
@@ -46,8 +48,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
             const WelcomePage(),
             rowDivider,
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                const Spacer(),
                 IconButton(
                   onPressed: () {
                     if (dataKey.currentContext != null) {
@@ -58,9 +60,8 @@ class _HomeDesktopState extends State<HomeDesktop> {
                       );
                     }
                   },
-                  icon: const Icon(Icons.keyboard_arrow_down_rounded, size: 75),
+                  icon:  Icon(Icons.keyboard_arrow_down_rounded, size: 15.sp),
                 ),
-                const Spacer(),
               ],
             ),
             const SizedBox(
@@ -82,47 +83,9 @@ class _HomeDesktopState extends State<HomeDesktop> {
             const NeedResourcePage(),
             rowDivider,
             rowDivider,
-            const TesttimonialsPage(),
-            // Row(
-            //   children: <Widget>[
-            //     Expanded(child: TwoDesk()),
-            //     Expanded(child: SkillsLogoDesk()),
-            //   ],
-            // ),
-            // rowDivider,
-            // Row(
-            //   children: <Widget>[
-            //     Expanded(child: SkillBarDesk()),
-            //     Expanded(child: ThreeDesk()),
-            //   ],
-            // ),
-            // rowDivider,
-            // Row(
-            //   children: [
-            //     Expanded(child: EducationDesk()),
-            //   ],
-            // ),
-            // rowDivider,
-            // Row(
-            //   children: [
-            //     Expanded(child: AchievementDesk()),
-            //   ],
-            // ),
-            // rowDivider,
-            // Row(
-            //   children: [
-            //     Expanded(child: BlogCenterDesk()),
-            //   ],
-            // ),
-            // rowDivider,
-            // Row(
-            //   children: [
-            //     Expanded(child: ContactCenterDesk()),
-            //     Expanded(
-            //       child: FourDesk(),
-            //     ),
-            //   ],
-            // ),
+            const TestimonialsPage(),
+            rowDivider,
+            const ContactHomePage(),
             const SizedBox(
               height: 100,
             ),

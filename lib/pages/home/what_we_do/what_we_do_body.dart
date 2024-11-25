@@ -72,17 +72,17 @@ class _WhatWeDoBodyDeskState extends State<WhatWeDoBodyDesk> {
         ),
         _buildStaggeredGridRow([
           {
-            'imageUrl': 'https://madison-technologies.com/wp-content/uploads/2020/12/Infrastructure.svg',
+            'imageUrl': 'assets/images/infrastructure.svg',
             'title': StringConstants.superAppInfrastructure,
             'content': StringConstants.superAppInfrastructureContent,
           },
           {
-            'imageUrl': 'https://madison-technologies.com/wp-content/uploads/2021/12/flexibility.svg',
+            'imageUrl': 'assets/images/UIDesign.svg',
             'title': StringConstants.cloudComputingForFinTech,
             'content': StringConstants.cloudComputingForFinTechContent,
           },
           {
-            'imageUrl': 'https://madison-technologies.com/wp-content/uploads/2020/12/ITSecurity.svg',
+            'imageUrl': 'assets/images/ITSecurity.svg',
             'title': StringConstants.cyberSecurity,
             'content': StringConstants.cyberSecurityContent,
           },
@@ -92,17 +92,17 @@ class _WhatWeDoBodyDeskState extends State<WhatWeDoBodyDesk> {
         ),
         _buildStaggeredGridRow([
           {
-            'imageUrl': 'https://madison-technologies.com/wp-content/uploads/2020/12/WebDevelopment.svg',
+            'imageUrl': 'assets/images/web_development.svg',
             'title': StringConstants.largeScaleWebDevelopment,
             'content': StringConstants.largeScaleWebDevelopmentContent,
           },
           {
-            'imageUrl': 'https://madison-technologies.com/wp-content/uploads/2020/12/MobileDevelopment.svg',
+            'imageUrl': 'assets/images/mobile_development.svg',
             'title': StringConstants.mobileAppDevelopment,
             'content': StringConstants.mobileAppDevelopmentContent,
           },
           {
-            'imageUrl': 'https://madison-technologies.com/wp-content/uploads/2020/12/UIDesign.svg',
+            'imageUrl': 'assets/images/UIDesign.svg',
             'title': StringConstants.uxUi,
             'content': StringConstants.uxUiContent,
           },

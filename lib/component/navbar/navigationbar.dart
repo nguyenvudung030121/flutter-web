@@ -2,7 +2,6 @@ import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_webapp/component/component.dart';
 import 'package:flutter_webapp/config/config.dart';
-import 'package:flutter_webapp/utils/text_utils.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:responsive_builder/responsive_builder.dart';
@@ -53,7 +52,8 @@ class NavbarDesktop extends StatelessWidget {
         children: <Widget>[
           Expanded(
             flex: 1,
-            child: GestureDetector(
+            child: InkWell(
+                mouseCursor: WidgetStateMouseCursor.clickable,
                 onTap: () {
                   HomeRoute().go(context);
                 },
@@ -163,9 +163,9 @@ class _NavbarItemState extends State<NavbarItem> {
     super.initState();
     textStyle = TextUtils.navBarStyle(widget.isSelected, false);
   }
+
   @override
   Widget build(BuildContext context) {
-
     return TextButton(
       onPressed: () {
         switch (widget.navbarRoutes) {

@@ -18,32 +18,32 @@ class FeaturedWorkBodyDesk extends StatelessWidget {
         crossAxisCellCount: 2,
         mainAxisExtent: imageHeight,
         child: const HoverImage(
-          imageUrl: 'https://madison-technologies.com/wp-content/uploads/2020/11/cs-ipc-resized.png',
-          hoverImageUrl: 'https://madison-technologies.com/wp-content/uploads/2020/11/IPC-Shopping-Centre-1@2x.png',
+          imageUrl: 'assets/images/ipc_resized.png',
+          hoverImageUrl: 'assets/images/ipc_logo.png',
         ),
       ),
        StaggeredGridTile.extent(
         crossAxisCellCount: 2,
         mainAxisExtent: imageHeight,
         child: const HoverImage(
-          imageUrl: 'https://madison-technologies.com/wp-content/uploads/2020/11/cs-workct-pro-resized.png',
-          hoverImageUrl: 'https://madison-technologies.com/wp-content/uploads/2020/11/WorkCT-Pro-1-resized.png',
+          imageUrl: 'assets/images/workct_pro_resized.png',
+          hoverImageUrl: 'assets/images/workct_pro_logo.png',
         ),
       ),
        StaggeredGridTile.extent(
         crossAxisCellCount: 2,
         mainAxisExtent: imageHeight,
         child: const HoverImage(
-          imageUrl: 'https://madison-technologies.com/wp-content/uploads/2020/11/cs-hitb-resized.png',
-          hoverImageUrl: 'https://madison-technologies.com/wp-content/uploads/2020/11/HITB-featured-image@2x.png',
+          imageUrl: 'assets/images/cs-hitb-resized.png',
+          hoverImageUrl: 'assets/images/HITB_logo.png',
         ),
       ),
       StaggeredGridTile.extent(
         crossAxisCellCount: 3,
         mainAxisExtent: imageHeight2,
         child: const HoverImage(
-          imageUrl: 'https://madison-technologies.com/wp-content/uploads/2022/02/cs-fave-resized.png',
-          hoverImageUrl: 'https://madison-technologies.com/wp-content/uploads/2022/02/Fave-1024x529-1.png',
+          imageUrl: 'assets/images/fave-resized.png',
+          hoverImageUrl: 'assets/images/fave_reclogo.png',
           isBigImage: true,
         ),
       ),
@@ -51,8 +51,8 @@ class FeaturedWorkBodyDesk extends StatelessWidget {
         crossAxisCellCount: 3,
         mainAxisExtent: imageHeight2,
         child: const HoverImage(
-          imageUrl: 'https://madison-technologies.com/wp-content/uploads/2021/07/cs-experian-resized.png',
-          hoverImageUrl: 'https://madison-technologies.com/wp-content/uploads/2021/07/Experian-–-1@2x@2x.png',
+          imageUrl: 'assets/images/cs-experian-resized.png',
+          hoverImageUrl: 'assets/images/experian_reclogo.png',
           isBigImage: true,
         ),
       ),

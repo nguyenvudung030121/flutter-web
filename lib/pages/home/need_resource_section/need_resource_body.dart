@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_webapp/utils/utils.dart';
 
 class NeedResourceBodyDesk extends StatelessWidget {
@@ -42,7 +43,7 @@ class NeedResourceBodyDesk extends StatelessWidget {
                       child: buildContainerResource(
                         StringConstants.developmentBundle,
                         StringConstants.developmentBundleContent,
-                        'https://madison-technologies.com/wp-content/uploads/2021/12/home-dev-bundle.svg',
+                        'assets/images/home-dev-bundle.svg',
                       ),
                     ),
                     const SizedBox(width: 20),
@@ -55,7 +56,7 @@ class NeedResourceBodyDesk extends StatelessWidget {
                         child: buildContainerResource(
                           StringConstants.qaSupport,
                           StringConstants.qaSupportContent,
-                          'https://madison-technologies.com/wp-content/uploads/2021/12/home-qa-support.svg',
+                          'assets/images/home-qa-support.svg',
                         ),
                       ),
                     ),
@@ -79,7 +80,7 @@ class NeedResourceBodyDesk extends StatelessWidget {
       child: Column(
         children: [
           const SizedBox(height: 10),
-          Image.network(
+          SvgPicture.asset(
             imageUrl,
             height: 60.h,
             width: 60.w,

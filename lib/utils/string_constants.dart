@@ -59,6 +59,25 @@ class StringConstants {
   static const String yourBattle = 'Your battle-hardened engineering team';
   static const String yourBattleDesc = 'We’re your partners in building amazing digital product experiences that scale. We create design and develop solutions for the web and mobile platforms. Since our humble beginnings in 2019, we’ve got some pretty impressive creds under our belt.';
 
+  static const List<String> whoWeAreImages = [
+    'assets/images/launch.png',
+    'assets/images/year.png',
+    'assets/images/team.png',
+    'assets/images/office.png',
+    'assets/images/year.png',
+    'assets/images/team.png',
+  ];
+
+  static const List<String> whoWeAreDesc = [
+    '16 projects launched in a year',
+    '30+ years of cumulative experience',
+    'Diverse team of 77 skilled professionals',
+    '3 offices around the globe',
+    '100+ completed projects',
+    '20+ cers: AWS, Data Scientist, PMI, etc',
+  ];
+
+  static const String comeTalkToUs = 'Come talk to us to learn how we drive great experiences from your businesses to your customers.';
 
 
 

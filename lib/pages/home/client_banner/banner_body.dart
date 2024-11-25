@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class BannerBodyDesktop extends StatelessWidget {
   const BannerBodyDesktop({Key? key}) : super(key: key);
@@ -19,11 +20,11 @@ class BannerBodyDesktop extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           buildImageContainer(
-              context, 'https://madison-technologies.com/wp-content/uploads/2021/08/GamudaLandLogo.png'),
-          buildImageContainer(context, 'https://madison-technologies.com/wp-content/uploads/2021/12/Group-2863.png'),
-          buildImageContainer(context, 'https://madison-technologies.com/wp-content/uploads/2021/08/Group-2857.png'),
-          buildImageContainer(context, 'https://madison-technologies.com/wp-content/uploads/2024/10/koinworks-logo.png'),
-          buildImageContainer(context, 'https://madison-technologies.com/wp-content/uploads/2024/10/abraham.png'),
+              context, 'assets/images/gamuda_logo.png'),
+          buildImageContainer(context, 'assets/images/fave_logo.png'),
+          buildImageContainer(context, 'assets/images/experian_logo.png'),
+          buildImageContainer(context, 'assets/images/koinworks_logo.png'),
+          buildImageContainer(context, 'assets/images/abraham_logo.png'),
         ],
       ),
     );
@@ -32,7 +33,7 @@ class BannerBodyDesktop extends StatelessWidget {
   SizedBox buildImageContainer(BuildContext context, String imageUrl) {
     return SizedBox(
       width: MediaQuery.of(context).size.width * 0.15,
-      child: Image.network(
+      child: Image.asset(
         imageUrl,
         fit: BoxFit.cover,
       ),

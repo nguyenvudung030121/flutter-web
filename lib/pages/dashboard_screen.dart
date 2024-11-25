@@ -19,7 +19,7 @@ class MyDashboardScreen extends StatelessWidget {
           children: [
             const CustomNavigationBar(),
             Expanded(
-              child: child,
+              child: SafeArea(child: SelectionArea(child: child)),
             ),
           ],
         ),

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_webapp/component/component.dart';
 import 'package:flutter_webapp/pages/home/client_banner/banner.dart';
-import 'package:flutter_webapp/pages/home/welcome/welcome_body.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class BannerPage extends StatelessWidget {

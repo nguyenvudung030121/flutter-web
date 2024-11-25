@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_webapp/utils/utils.dart';
 
 class WhatWeDoItem extends StatefulWidget {
@@ -46,7 +47,7 @@ class _WhatWeDoItemState extends State<WhatWeDoItem> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.network(
+          SvgPicture.asset(
             widget.imageUrl,
             height: 55,
             width: 55,

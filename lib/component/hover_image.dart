@@ -27,7 +27,7 @@ class HoverImage extends StatelessWidget {
       ),
       secondChild: Stack(
         children: [
-          Image.network(
+          Image.asset(
             imageUrl,
             fit: BoxFit.fill,
             width: double.infinity,
@@ -35,7 +35,7 @@ class HoverImage extends StatelessWidget {
           ),
           Opacity(
             opacity: 0.85, // Đặt mức độ trong suốt (0.0 là hoàn toàn trong suốt, 1.0 là không trong suốt)
-            child: Image.network(
+            child: Image.asset(
               hoverImageUrl,
               fit: BoxFit.fill,
               width: double.infinity,

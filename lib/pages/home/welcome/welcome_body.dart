@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_webapp/utils/utils.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:jovial_svg/jovial_svg.dart';
 
 class WelcomePageDesk extends StatelessWidget {
   const WelcomePageDesk({Key? key}) : super(key: key);
@@ -27,7 +27,9 @@ class WelcomePageDesk extends StatelessWidget {
                 const SizedBox(
                   height: 30,
                 ),
-                Image.network('https://madison-technologies.com/wp-content/uploads/2024/07/masthead-resized.jpg'),
+                Image.asset(
+                  'assets/images/masthead.png',
+                ),
               ],
             ),
           ),
@@ -43,8 +45,8 @@ class WelcomePageDesk extends StatelessWidget {
                   ),
                 ),
                 rowDividerDesk,
-                RichText(
-                  text: TextSpan(
+                Text.rich(
+                   TextSpan(
                     style: TextUtils.contentStyle(),
                     children: [
                       const TextSpan(text: 'We aim to be the '),
@@ -97,22 +99,18 @@ class WelcomePageDesk extends StatelessWidget {
                 rowDividerDesk,
                 Row(
                   children: [
-                    ScalableImageWidget.fromSISource(
-                      scale: 0.15,
-                      si: ScalableImageSource.fromSvgHttpUrl(
-                        Uri.parse(
-                            'https://shareables-prod-static.clutch.co/badges/top_clutch.co_app_development_company_supply_chain_logistics_and_transport_singapore.svg'),
-                      ),
+                    SvgPicture.asset(
+                      'assets/images/top_clutch_malaysia.svg',
+                      width: 150,
+                      height: 150,
                     ),
                     const SizedBox(
                       width: 30,
                     ),
-                    ScalableImageWidget.fromSISource(
-                      scale: 0.15,
-                      si: ScalableImageSource.fromSvgHttpUrl(
-                        Uri.parse(
-                            'https://shareables-prod-static.clutch.co/badges/top_clutch.co_app_development_company_supply_chain_logistics_and_transport_singapore.svg'),
-                      ),
+                    SvgPicture.asset(
+                      'assets/images/top_clutch_singapore.svg',
+                      width: 150,
+                      height: 150,
                     ),
                   ],
                 )

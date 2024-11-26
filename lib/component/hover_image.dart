@@ -19,7 +19,7 @@ class HoverImage extends StatelessWidget {
       cursor: SystemMouseCursors.click,
       firstChild: SizedBox(
         width: double.infinity,
-        child: Image.network(
+        child: Image.asset(
           imageUrl,
           fit: BoxFit.fill,
           height: imageHeight,

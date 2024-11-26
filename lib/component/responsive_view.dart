@@ -1,20 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
-class ResponsiveView extends StatelessWidget {
-  const ResponsiveView({Key? key}) : super(key: key);
-
-
-  @override
-  Widget build(BuildContext context) {
-    return ScreenTypeLayout.builder(
-      desktop: (BuildContext context) => const ResponsiveViewDesktop(child: null,),
-      tablet: (BuildContext context) => const ResponsiveViewMobile(),
-      mobile: (BuildContext context) => const ResponsiveViewMobile(),
-    );
-  }
-}
-
 class ResponsiveViewDesktop extends StatelessWidget {
   final Widget? child;
   const ResponsiveViewDesktop({Key? key, this.child}) : super(key: key);

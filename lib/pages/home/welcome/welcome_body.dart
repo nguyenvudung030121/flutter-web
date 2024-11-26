@@ -99,18 +99,20 @@ class WelcomePageDesk extends StatelessWidget {
                 rowDividerDesk,
                 Row(
                   children: [
-                    SvgPicture.asset(
-                      'assets/images/top_clutch_malaysia.svg',
+                    Image.asset(
+                      'assets/images/top_clutch_singapore.png',
                       width: 150,
                       height: 150,
+                      fit: BoxFit.contain,
                     ),
                     const SizedBox(
                       width: 30,
                     ),
                     SvgPicture.asset(
-                      'assets/images/top_clutch_singapore.svg',
+                      'assets/images/top_clutch_malaysia.svg',
                       width: 150,
                       height: 150,
+                      fit: BoxFit.contain,
                     ),
                   ],
                 )
@@ -173,7 +175,6 @@ class WelcomePageMob extends StatelessWidget {
                         size: 40,
                       ),
                       onPressed: () {
-                        // js.context.callMethod("open", ["https://www.facebook.com/naveenjujaray"]);
                       },
                     )),
                 SizedBox(
@@ -186,7 +187,6 @@ class WelcomePageMob extends StatelessWidget {
                         size: 40,
                       ),
                       onPressed: () {
-                        // js.context.callMethod("open", ["https://twitter.com/naveenjujaray"]);
                       },
                     )),
                 SizedBox(
@@ -199,7 +199,6 @@ class WelcomePageMob extends StatelessWidget {
                         size: 40,
                       ),
                       onPressed: () {
-                        // js.context.callMethod("open", ["https://www.linkedin.com/in/naveenjujaray"]);
                       },
                     )),
                 SizedBox(
@@ -212,7 +211,6 @@ class WelcomePageMob extends StatelessWidget {
                         size: 40,
                       ),
                       onPressed: () {
-                        // js.context.callMethod("open", ["https://naveenjujaray.js.org"]);
                       },
                     )),
                 SizedBox(
@@ -242,7 +240,6 @@ class WelcomePageMob extends StatelessWidget {
                         size: 40,
                       ),
                       onPressed: () {
-                        // js.context.callMethod("open", ["https://www.gitlab.com/naveenjujaray"]);
                       },
                     )),
                 SizedBox(
@@ -254,7 +251,6 @@ class WelcomePageMob extends StatelessWidget {
                         size: 40,
                       ),
                       onPressed: () {
-                        // js.context.callMethod("open", ["https://medium.com/@naveenjujaray"]);
                       },
                     )),
                 Container(
@@ -266,7 +262,6 @@ class WelcomePageMob extends StatelessWidget {
                         size: 40,
                       ),
                       onPressed: () {
-                        // js.context.callMethod("open", ["https://dev.to/naveenjujaray"]);
                       },
                     )),
                 SizedBox(
@@ -321,8 +316,6 @@ class WelcomePageMob extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      // js.context.callMethod("open",
-                      //     ["https://drive.google.com/file/d/1PZYWMJEQMLIh5g5mXnENQcOL1vlunq6_/view?usp=sharing"]);
                     },
                     child: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),

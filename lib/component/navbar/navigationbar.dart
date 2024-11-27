@@ -55,7 +55,7 @@ class NavbarDesktop extends StatelessWidget {
             child: InkWell(
                 mouseCursor: WidgetStateMouseCursor.clickable,
                 onTap: () {
-                  HomeRoute().go(context);
+                  LandingPageRoute().go(context);
                 },
                 child: const NavbarLogo()),
           ),
@@ -114,7 +114,7 @@ class NavbarMob extends StatelessWidget {
         children: <Widget>[
           GestureDetector(
               onTap: () {
-                HomeRoute().go(context);
+                LandingPageRoute().go(context);
               },
               child: const NavbarLogo()),
           Expanded(
@@ -170,7 +170,7 @@ class _NavbarItemState extends State<NavbarItem> {
       onPressed: () {
         switch (widget.navbarRoutes) {
           case NavbarRoutes.home:
-            HomeRoute().go(context);
+            LandingPageRoute().go(context);
             break;
           case NavbarRoutes.whoWeAre:
             WhoWeAreRoute().go(context);

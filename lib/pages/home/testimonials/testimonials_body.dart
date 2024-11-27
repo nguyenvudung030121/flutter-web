@@ -16,8 +16,9 @@ class _TestimonialsBodyDesk extends State<TestimonialsBodyDesk> {
     return Container(
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage(
-              'https://madison-technologies.com/wp-content/themes/madison/assets/images/testimonial-bg.png'),
+          image: AssetImage(
+            'assets/images/testimonial-bg.png',
+          ),
           fit: BoxFit.cover,
         ),
       ),

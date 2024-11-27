@@ -36,7 +36,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     _router = GoRouter(
-      initialLocation: HomeRoute().location,
+      initialLocation: LandingPageRoute().location,
       debugLogDiagnostics: true,
       routes: $appRoutes,
       redirect: (context, state) {

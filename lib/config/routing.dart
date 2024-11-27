@@ -18,7 +18,7 @@ final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
 
 @TypedShellRoute<DashboardShellRoute>(
   routes: <TypedRoute<RouteData>>[
-    TypedGoRoute<HomeRoute>(
+    TypedGoRoute<LandingPageRoute>(
       path: dashBoard,
       routes: [
         // TypedGoRoute<ItemDetailsRoute>(path: 'items/:id'),
@@ -27,6 +27,7 @@ final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
     TypedGoRoute<WhoWeAreRoute>(path: whoWeAre),
   ],
 )
+
 class DashboardShellRoute extends ShellRouteData {
   const DashboardShellRoute();
 
@@ -38,7 +39,7 @@ class DashboardShellRoute extends ShellRouteData {
   }
 }
 
-class HomeRoute extends GoRouteData {
+class LandingPageRoute extends GoRouteData {
   @override
   Widget build(BuildContext context, GoRouterState state) => const HomeScreen();
 }
@@ -50,32 +51,32 @@ class WhoWeAreRoute extends GoRouteData {
 
 
 
-PageRoute _getPageRoute(Widget child, String routeName) {
-  return _FadeRoute(child: child, routeName: routeName);
-}
-
-class _FadeRoute extends PageRouteBuilder {
-  final Widget child;
-  final String routeName;
-
-  _FadeRoute({required this.child, required this.routeName})
-      : super(
-          pageBuilder: (
-            BuildContext context,
-            Animation<double> animation,
-            Animation<double> secondaryAnimation,
-          ) =>
-              child,
-          settings: RouteSettings(name: routeName),
-          transitionsBuilder: (
-            BuildContext context,
-            Animation<double> animation,
-            Animation<double> secondaryAnimation,
-            Widget child,
-          ) =>
-              FadeTransition(
-            opacity: animation,
-            child: child,
-          ),
-        );
-}
+// PageRoute _getPageRoute(Widget child, String routeName) {
+//   return _FadeRoute(child: child, routeName: routeName);
+// }
+//
+// class _FadeRoute extends PageRouteBuilder {
+//   final Widget child;
+//   final String routeName;
+//
+//   _FadeRoute({required this.child, required this.routeName})
+//       : super(
+//           pageBuilder: (
+//             BuildContext context,
+//             Animation<double> animation,
+//             Animation<double> secondaryAnimation,
+//           ) =>
+//               child,
+//           settings: RouteSettings(name: routeName),
+//           transitionsBuilder: (
+//             BuildContext context,
+//             Animation<double> animation,
+//             Animation<double> secondaryAnimation,
+//             Widget child,
+//           ) =>
+//               FadeTransition(
+//             opacity: animation,
+//             child: child,
+//           ),
+//         );
+// }

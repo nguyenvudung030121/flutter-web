@@ -72,35 +72,59 @@ class _WhoWeAreDetailDeskState extends State<WhoWeAreDetailDesk> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                IconButton(
-                  onPressed: () {
-                    if (currentId > minValue) {
-                      setState(() {
-                        currentId--;
-                      });
-                    } else {
-                      setState(() {
-                        currentId = maxValue;
-                      });
-                    }
-                    ItemDetailsRoute(id: currentId.toString()).replace(context);
-                  },
-                  icon: Icon(Icons.arrow_back_ios, size: 10.sp, color: Colors.lightBlueAccent),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        if (currentId > minValue) {
+                          setState(() {
+                            currentId--;
+                          });
+                        } else {
+                          setState(() {
+                            currentId = maxValue;
+                          });
+                        }
+                        ItemDetailsRoute(id: currentId.toString()).replace(context);
+                      },
+                      icon: Icon(Icons.arrow_back_ios, size: 10.sp, color: Colors.lightBlueAccent),
+                    ),
+                    SizedBox(
+                      height: 8.h,
+                    ),
+                    Text(
+                      'Previous Project',
+                      style: TextUtils.defaultStyle(),
+                    ),
+                  ],
                 ),
-                IconButton(
-                  onPressed: () {
-                    if (currentId < maxValue) {
-                      setState(() {
-                        currentId++;
-                      });
-                    } else{
-                      setState(() {
-                        currentId = minValue;
-                      });
-                    }
-                    ItemDetailsRoute(id: currentId.toString()).replace(context);
-                  },
-                  icon: Icon(Icons.arrow_forward_ios, size: 10.sp, color: Colors.lightBlueAccent),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    IconButton(
+                      onPressed: () {
+                        if (currentId < maxValue) {
+                          setState(() {
+                            currentId++;
+                          });
+                        } else {
+                          setState(() {
+                            currentId = minValue;
+                          });
+                        }
+                        ItemDetailsRoute(id: currentId.toString()).replace(context);
+                      },
+                      icon: Icon(Icons.arrow_forward_ios, size: 10.sp, color: Colors.lightBlueAccent),
+                    ),
+                    SizedBox(
+                      height: 8.h,
+                    ),
+                    Text(
+                      'Next Project',
+                      style: TextUtils.defaultStyle(),
+                    ),
+                  ],
                 ),
               ],
             ),

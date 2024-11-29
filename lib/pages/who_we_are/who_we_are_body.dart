@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_webapp/component/primary_button/primary_button.dart';
+import 'package:flutter_webapp/config/config.dart';
 import 'package:flutter_webapp/utils/utils.dart';
 
 import '../../component/footer.dart';
@@ -24,7 +25,7 @@ class _WhoWeAreBodyDeskState extends State<WhoWeAreBodyDesk> {
     return SafeArea(
       child: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: SpacingUtils.extraLarge),
+          padding: const EdgeInsets.symmetric(horizontal: SpacingUtils.extraLarge, vertical: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -45,7 +46,7 @@ class _WhoWeAreBodyDeskState extends State<WhoWeAreBodyDesk> {
               rowDivider,
               Wrap(
                 spacing: 30.0, // spacing between items
-                runSpacing: 30.0, // spacing between rows
+                runSpacing: 30.0, // spacing between rows$
                 alignment: WrapAlignment.center,
                 children: List.generate(
                   5,
@@ -66,23 +67,30 @@ class _WhoWeAreBodyDeskState extends State<WhoWeAreBodyDesk> {
                           ),
                         ],
                       ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset(
-                            StringConstants.whoWeAreImages[index],
-                            height: 55.h,
-                            fit: BoxFit.contain,
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            StringConstants.whoWeAreDesc[index],
-                            style: TextUtils.headerStyle().copyWith(fontSize: 7.sp, color: Colors.black),
-                            textAlign: TextAlign.start,
-                          ),
-                        ],
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () {
+                          ItemDetailsRoute(id: index.toString()).replace(context);
+                        },
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              StringConstants.whoWeAreImages[index],
+                              height: 55.h,
+                              fit: BoxFit.contain,
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              StringConstants.whoWeAreDesc[index],
+                              style: TextUtils.headerStyle().copyWith(fontSize: 7.sp, color: Colors.black),
+                              textAlign: TextAlign.start,
+                            ),
+                          ],
+                        ),
                       ),
                     );
                   },

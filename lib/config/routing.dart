@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_webapp/pages/pages.dart';
+import 'package:flutter_webapp/pages/who_we_are/detail/detail_item.dart';
 import 'package:go_router/go_router.dart';
+
+import '../pages/who_we_are/detail/who_we_are_detail.dart';
 
 part 'routing.g.dart';
 
-const String skillsRoute = '/skills';
-const String projectsRoute = '/projects';
-const String educationRoute = '/education';
-const String achievementsRoute = '/achievements';
 const String contactRoute = '/contact';
 const String blogRoute = '/blogs';
 const String whoWeAre = '/who-we-are';
+const String whoWeAreDetail = '/detail';
 const String dashBoard = '/';
 
 final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
@@ -20,11 +20,19 @@ final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
   routes: <TypedRoute<RouteData>>[
     TypedGoRoute<LandingPageRoute>(
       path: dashBoard,
+    ),
+    TypedGoRoute<WhoWeAreRoute>(
+      path: whoWeAre,
       routes: [
-        // TypedGoRoute<ItemDetailsRoute>(path: 'items/:id'),
+        TypedShellRoute<WhoWeAreDetailShellRoute>(
+            routes: <TypedRoute<RouteData>>[
+              TypedGoRoute<ItemDetailsRoute>(
+                path: 'detail/:id',
+              ),
+            ]
+        ),
       ],
     ),
-    TypedGoRoute<WhoWeAreRoute>(path: whoWeAre),
   ],
 )
 
@@ -49,7 +57,27 @@ class WhoWeAreRoute extends GoRouteData {
   Widget build(BuildContext context, GoRouterState state) => const WhoAreWePage();
 }
 
+class WhoWeAreDetailShellRoute extends ShellRouteData {
+  const WhoWeAreDetailShellRoute();
 
+  static final GlobalKey<NavigatorState> $navigatorWhoWeAreKey = GlobalKey<NavigatorState>();
+
+  @override
+  Widget builder(BuildContext context, GoRouterState state, Widget navigator) {
+    return WhoAreWeDetailPage(
+    child: navigator);
+  }
+}
+
+
+class ItemDetailsRoute extends GoRouteData {
+  final String id;
+
+  const ItemDetailsRoute({required this.id});
+
+  @override
+  Widget build(BuildContext context, GoRouterState state) => DetailItem(id: id);
+}
 
 // PageRoute _getPageRoute(Widget child, String routeName) {
 //   return _FadeRoute(child: child, routeName: routeName);

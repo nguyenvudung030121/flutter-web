@@ -114,6 +114,15 @@ class WelcomePageDesk extends StatelessWidget {
                       height: 150,
                       fit: BoxFit.contain,
                     ),
+                    const SizedBox(
+                      width: 30,
+                    ),
+                    Image.network(
+                      'https://madison-technologies.com/wp-content/uploads/2020/12/year.png',
+                      width: 150,
+                      height: 150,
+                      fit: BoxFit.contain,
+                    )
                   ],
                 )
               ],
@@ -222,7 +231,7 @@ class WelcomePageMob extends StatelessWidget {
                         size: 40,
                       ),
                       onPressed: () {
-                        // js.context.callMethod("open", ["https://www.github.com/naveenjujaray"]);
+                        // js.context.callMethod("open", ["https://www.github.com"]);
                       },
                     )),
               ],

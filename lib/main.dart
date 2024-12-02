@@ -14,7 +14,7 @@ Future<void> main() async {
   usePathUrlStrategy();
   GoRouter.optionURLReflectsImperativeAPIs = true;
   ResponsiveSizingConfig.instance.setCustomBreakpoints(
-    const ScreenBreakpoints(desktop: 1200, tablet: 1000, watch: 200),
+    const ScreenBreakpoints(desktop: 1200, tablet: 1000, watch: 50),
   );
   runApp(ScreenUtilInit(
     builder: (context, child) => MyApp(savedThemeMode: savedThemeMode ?? AdaptiveThemeMode.light),

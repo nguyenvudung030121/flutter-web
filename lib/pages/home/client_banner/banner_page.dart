@@ -9,9 +9,9 @@ class BannerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
-      mobile: (BuildContext context) => const ResponsiveViewMobile(child: BannerBodyDesktop()),
+      mobile: (BuildContext context) => const ResponsiveViewMobile(child: BannerBodyMobile()),
       desktop: (BuildContext context) => const ResponsiveViewDesktop(child: BannerBodyDesktop()),
-      tablet: (BuildContext context) => const ResponsiveViewTablet(child: BannerBodyDesktop()),
+      tablet: (BuildContext context) => const ResponsiveViewMobile(child: BannerBodyMobile()),
     );
   }
 }

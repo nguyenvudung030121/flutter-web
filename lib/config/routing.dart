@@ -24,17 +24,16 @@ final GlobalKey<NavigatorState> shellNavigatorKey = GlobalKey<NavigatorState>();
     TypedGoRoute<WhoWeAreRoute>(
       path: whoWeAre,
       routes: [
-        TypedShellRoute<WhoWeAreDetailShellRoute>(
-            routes: <TypedRoute<RouteData>>[
-              TypedGoRoute<ItemDetailsRoute>(
-                path: 'detail/:id',
-              ),
-            ]
-        ),
+        TypedShellRoute<WhoWeAreDetailShellRoute>(routes: <TypedRoute<RouteData>>[
+          TypedGoRoute<ItemDetailsRoute>(
+            path: 'detail/:id',
+          ),
+        ]),
       ],
     ),
   ],
 )
+
 
 class DashboardShellRoute extends ShellRouteData {
   const DashboardShellRoute();
@@ -65,10 +64,10 @@ class WhoWeAreDetailShellRoute extends ShellRouteData {
   @override
   Widget builder(BuildContext context, GoRouterState state, Widget navigator) {
     return WhoAreWeDetailPage(
-    child: navigator);
+      child: navigator,
+    );
   }
 }
-
 
 class ItemDetailsRoute extends GoRouteData {
   final String id;

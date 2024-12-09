@@ -108,38 +108,46 @@ class NavbarMob extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 40,
-      child: Row(
-        mainAxisSize: MainAxisSize.max,
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          GestureDetector(
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 30),
+      child: SizedBox(
+        height: 40,
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Visibility(
+              visible: false,
+              child: IconButton(
+                alignment: Alignment.topRight,
+                icon: const Icon(
+                  FontAwesomeIcons.bars,
+                ),
+                onPressed: () {
+                  Scaffold.of(context).openEndDrawer();
+                },
+              ),
+            ),
+            InkWell(
+              mouseCursor: WidgetStateMouseCursor.clickable,
+              splashColor: Colors.transparent,
+              hoverColor: Colors.transparent,
               onTap: () {
                 LandingPageRoute().replace(context);
               },
-              child: const NavbarLogo()),
-          Expanded(
-              child: Container(
-            width: 100,
-          )),
-          IconButton(
-            alignment: Alignment.topRight,
-            onPressed: () {
-              AdaptiveTheme.of(context).toggleThemeMode();
-            },
-            icon: const Icon(Icons.brightness_3, size: 25),
-          ),
-          IconButton(
-            alignment: Alignment.topRight,
-            icon: const Icon(
-              FontAwesomeIcons.bars,
+              child: const NavbarLogo(),
             ),
-            onPressed: () {
-              Scaffold.of(context).openEndDrawer();
-            },
-          ),
-        ],
+            IconButton(
+              alignment: Alignment.topRight,
+              icon: const Icon(
+                FontAwesomeIcons.bars,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

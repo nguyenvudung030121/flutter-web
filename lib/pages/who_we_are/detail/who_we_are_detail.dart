@@ -94,7 +94,7 @@ class _WhoWeAreDetailDeskState extends State<WhoWeAreDetailDesk> {
                       height: 8.h,
                     ),
                     Text(
-                      'Previous Project',
+                      StringConstants.previousProject,
                       style: TextUtils.defaultStyle(),
                     ),
                   ],
@@ -121,7 +121,7 @@ class _WhoWeAreDetailDeskState extends State<WhoWeAreDetailDesk> {
                       height: 8.h,
                     ),
                     Text(
-                      'Next Project',
+                      StringConstants.nextProject,
                       style: TextUtils.defaultStyle(),
                     ),
                   ],

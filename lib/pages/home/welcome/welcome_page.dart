@@ -11,7 +11,7 @@ class WelcomePage extends StatelessWidget {
     return ScreenTypeLayout.builder(
       mobile: (BuildContext context) => const ResponsiveViewMobile(child: WelcomePageMob()),
       desktop: (BuildContext context) => const ResponsiveViewDesktop(child: WelcomePageDesk()),
-      tablet: (BuildContext context) => const ResponsiveViewTablet(child: WelcomePageMob()),
+      tablet: (BuildContext context) => const ResponsiveViewMobile(child: WelcomePageMob()),
     );
   }
 }

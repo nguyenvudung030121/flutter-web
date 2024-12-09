@@ -45,6 +45,11 @@ class TextUtils {
         fontSize: 6.sp, color: Colors.black, fontWeight: FontWeight.w400, height: 1.5, fontFamily: 'SourceSansPro');
   }
 
+  static TextStyle contentStyleMobile() {
+    return TextStyle(
+        fontSize: 9.sp, color: Colors.black, fontWeight: FontWeight.w400, height: 1.5, fontFamily: 'SourceSansPro');
+  }
+
   static TextStyle defaultStyle() {
     return TextStyle(
         fontSize: 4.sp, color: Colors.black, fontWeight: FontWeight.w400, height: 1.5, fontFamily: 'SourceSansPro');

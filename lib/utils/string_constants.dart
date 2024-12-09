@@ -7,7 +7,7 @@ class StringConstants {
   static const String ourWork = 'OUR WORK';
   static const String ourBlog = 'OUR BLOG';
   static const String contact = 'CONTACT US';
-  static const String userName = 'Hi! Dung Nguyen';
+  static const String userName = 'Hi! Maddies';
   static const String yourPropTech = 'Your PropTech Super App Solution';
   static const String slogan = 'We’re ever grateful for the trust given from our amazing clientelle';
   static const String featuredWork = 'Featured Work';
@@ -78,7 +78,8 @@ class StringConstants {
   ];
 
   static const String comeTalkToUs = 'Come talk to us to learn how we drive great experiences from your businesses to your customers.';
-
+  static const String nextProject = 'Next Project';
+  static const String previousProject = 'Previous Project';
 
 
 

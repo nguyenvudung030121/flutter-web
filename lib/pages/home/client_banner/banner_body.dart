@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_webapp/component/dropdown_button.dart';
 
 class BannerBodyDesktop extends StatelessWidget {
   const BannerBodyDesktop({Key? key}) : super(key: key);
@@ -40,3 +42,61 @@ class BannerBodyDesktop extends StatelessWidget {
     );
   }
 }
+
+class BannerBodyMobile extends StatelessWidget {
+  const BannerBodyMobile({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        int imageCount;
+        if (constraints.maxWidth >= 1000) {
+          imageCount = 4;
+        } else if (constraints.maxWidth >= 400) {
+          imageCount = 3;
+        } else {
+          imageCount = 2; // Default to 2 images for smaller screens
+        }
+
+        List<Widget> images = [
+          buildImageContainer(context, 'assets/images/gamuda_logo.png'),
+          buildImageContainer(context, 'assets/images/fave_logo.png'),
+          buildImageContainer(context, 'assets/images/experian_logo.png'),
+          buildImageContainer(context, 'assets/images/koinworks_logo.png'),
+        ];
+
+        return Container(
+          width: constraints.maxWidth,
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          constraints:  BoxConstraints(
+            minHeight: 180.h,
+            maxHeight: 400,
+          ),
+          decoration: BoxDecoration(
+            color: Colors.grey[200],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: images.take(imageCount).toList(),
+          ),
+        );
+      },
+    );
+  }
+
+
+  Widget buildImageContainer(BuildContext context, String imageUrl) {
+    return Container(
+      constraints: BoxConstraints(
+        minWidth: 20.w,
+        maxWidth: 80.w,
+      ),
+      child: Image.asset(
+        imageUrl,
+        fit: BoxFit.cover,
+      ),
+    );
+  }
+}
+

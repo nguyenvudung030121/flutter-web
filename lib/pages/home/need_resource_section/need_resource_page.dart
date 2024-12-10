@@ -10,9 +10,9 @@ class NeedResourcePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
-      mobile: (BuildContext context) =>   const ResponsiveViewMobile(child: NeedResourceBodyDesk()),
+      mobile: (BuildContext context) =>   const ResponsiveViewMobile(child: NeedResourceBodyMobile()),
       desktop: (BuildContext context) =>   const ResponsiveViewDesktop(child: NeedResourceBodyDesk()),
-      tablet: (BuildContext context) =>   const ResponsiveViewTablet(child: NeedResourceBodyDesk()),
+      tablet: (BuildContext context) =>   const ResponsiveViewMobile(child: NeedResourceBodyMobile()),
     );
   }
 }

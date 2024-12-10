@@ -10,9 +10,9 @@ class TestimonialsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
-      mobile: (BuildContext context) =>   const ResponsiveViewMobile(child: TestimonialsBodyDesk()),
+      mobile: (BuildContext context) =>   const ResponsiveViewMobile(child: TestimonialsBodyMobile()),
       desktop: (BuildContext context) =>   const ResponsiveViewDesktop(child: TestimonialsBodyDesk()),
-      tablet: (BuildContext context) =>   const ResponsiveViewTablet(child: TestimonialsBodyDesk()),
+      tablet: (BuildContext context) =>   const ResponsiveViewMobile(child: TestimonialsBodyMobile()),
     );
   }
 }

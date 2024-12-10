@@ -130,3 +130,113 @@ class NeedResourceBodyDesk extends StatelessWidget {
     );
   }
 }
+
+class NeedResourceBodyMobile extends StatelessWidget {
+  const NeedResourceBodyMobile({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: SpacingUtils.medium),
+      child: IntrinsicHeight(
+        child: Container(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 50.h),
+          decoration: BoxDecoration(
+            color: Colors.lightBlueAccent,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                StringConstants.needMoreResourcesMobile,
+                style: TextUtils.headerStyle().copyWith(color: Colors.black, fontSize: 24.spMin),
+              ),
+              const SizedBox(height: 10),
+              Text(
+                StringConstants.needMoreResourcesContent,
+                style: TextUtils.defaultStyle().copyWith(
+                  fontSize: 14.spMin,
+                ),
+              ),
+              const SizedBox(height: 10),
+              buildContainerResource(
+                StringConstants.developmentBundle,
+                StringConstants.developmentBundleContent,
+                'assets/images/home-dev-bundle.svg',
+              ),
+              const SizedBox(height: 10),
+              buildContainerResource(
+                StringConstants.qaSupport,
+                StringConstants.qaSupportContent,
+                'assets/images/home-qa-support.svg',
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget buildContainerResource(String title, String content, String imageUrl) {
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 25.h),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Column(
+        children: [
+          const SizedBox(height: 10),
+          SvgPicture.asset(
+            imageUrl,
+            height: 60.h,
+            width: 60.w,
+            fit: BoxFit.contain,
+          ),
+          const SizedBox(height: 15),
+          Text(
+            title,
+            style: TextUtils.defaultStyle().copyWith(
+              fontFamily: TextUtils.fontFamily(FontSourceSansPro.bold),
+              fontSize: 16.spMin,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          Text(
+            content,
+            style: TextUtils.defaultStyle().copyWith(fontSize: 14.spMin),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 10),
+          buildElevatedButton(),
+        ],
+      ),
+    );
+  }
+
+  Widget buildElevatedButton() {
+    return InkWell(
+      onTap: () {},
+      hoverColor: Colors.blue.withOpacity(0.2),
+      child: Container(
+        padding: EdgeInsets.symmetric(vertical: 10.h, horizontal: 10.w),
+        decoration: BoxDecoration(
+          color: Colors.lightBlueAccent,
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: Text(
+          StringConstants.findOutMore.toUpperCase(),
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: 10.spMin,
+            fontWeight: FontWeight.w400,
+            letterSpacing: 1.5,
+            fontFamily: TextUtils.fontFamily(FontSourceSansPro.semiBold),
+          ),
+        ),
+      ),
+    );
+  }
+}

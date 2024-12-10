@@ -93,7 +93,9 @@ class _TestimonialsBodyDesk extends State<TestimonialsBodyDesk> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Icon(Icons.message_outlined, color: Colors.black, size: 5.sp),
-                          const SizedBox(width: 20,),
+                          const SizedBox(
+                            width: 20,
+                          ),
                           Text(
                             'Experian APAC',
                             style: TextUtils.defaultStyle().copyWith(
@@ -107,6 +109,128 @@ class _TestimonialsBodyDesk extends State<TestimonialsBodyDesk> {
                 );
               },
             ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class TestimonialsBodyMobile extends StatefulWidget {
+  const TestimonialsBodyMobile({Key? key}) : super(key: key);
+
+  @override
+  State<TestimonialsBodyMobile> createState() => _TestimonialsBodyMobile();
+}
+
+class _TestimonialsBodyMobile extends State<TestimonialsBodyMobile> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+            'assets/images/testimonial-bg.png',
+          ),
+          fit: BoxFit.cover,
+        ),
+      ),
+      child: Column(
+        children: [
+          Text(
+            StringConstants.testimonials,
+            style: TextUtils.headerStyle().copyWith(
+              color: Colors.black,
+              fontSize: 15.spMax,
+              letterSpacing: 1,
+            ),
+          ),
+          const SizedBox(height: 10),
+          Text(
+            StringConstants.ourSuccessStories,
+            style: TextUtils.defaultStyle().copyWith(
+              letterSpacing: 1,
+              fontSize: 16.spMin,
+            ),
+          ),
+          const SizedBox(height: 40),
+          CarouselSlider.builder(
+            options: CarouselOptions(
+              height: 270.h,
+              autoPlay: false,
+              enableInfiniteScroll: true,
+              reverse: false,
+              autoPlayInterval: const Duration(seconds: 4),
+              autoPlayAnimationDuration: const Duration(milliseconds: 800),
+              autoPlayCurve: Curves.fastOutSlowIn,
+              pauseAutoPlayOnTouch: true,
+              enlargeCenterPage: true,
+              enlargeFactor: 0,
+              viewportFraction: 0.7,
+            ),
+            itemCount: 5,
+            itemBuilder: (context, index, realIndex) {
+              return Container(
+                margin: const EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  border: Border.all(color: Colors.grey[400]!, width: 1),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Experian APAC',
+                          style: TextUtils.defaultStyle().copyWith(
+                            fontSize: 18.spMin,
+                            fontFamily: TextUtils.fontFamily(FontSourceSansPro.semiBold),
+                          ),
+                        ),
+                        Text(
+                          '99',
+                          style: TextUtils.defaultStyle().copyWith(
+                            fontSize: 23.spMin,
+                            color: Colors.lightBlueAccent.withOpacity(0.5),
+                            fontFamily: TextUtils.fontFamily(FontSourceSansPro.semiBold),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Flexible(
+                      child: Text(
+                        'The Madison team works seamlessly internally to get our tasks and work done efficiently. Their coordination work and transparency with the client (us) has made the entire process much easier to manage for us with lesser unnecessary back and forth communication and lesser hiccups. Always feel safe to count on them even when I’m away on leave! ',
+                        style: TextUtils.defaultStyle().copyWith(fontSize: 14.spMin),
+                        overflow: TextOverflow.ellipsis,
+                        maxLines: 8,
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Icon(Icons.message_outlined, color: Colors.black, size: 5.sp),
+                        const SizedBox(
+                          width: 20,
+                        ),
+                        Text(
+                          'Experian APAC',
+                          style: TextUtils.defaultStyle().copyWith(
+                            fontFamily: TextUtils.fontFamily(FontSourceSansPro.semiBold),
+                            fontSize: 14.spMin,
+                          ),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
         ],
       ),

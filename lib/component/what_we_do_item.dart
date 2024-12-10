@@ -113,7 +113,6 @@ class WhatWeDoItemMob extends StatefulWidget {
 }
 
 class _WhatWeDoItemMobState extends State<WhatWeDoItemMob> {
-  bool isHovered = false;
   late TextStyle textStyle;
 
   @override
@@ -127,65 +126,50 @@ class _WhatWeDoItemMobState extends State<WhatWeDoItemMob> {
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      onEnter: (_) {
-        setState(() {
-          isHovered = true;
-        });
-      },
-      onExit: (_) {
-        setState(() {
-          isHovered = false;
-        });
-      },
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          SvgPicture.asset(
-            widget.imageUrl,
-            height: 25.w,
-            width: 25.h,
-            fit: BoxFit.contain,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        SvgPicture.asset(
+          widget.imageUrl,
+          height: 25.w,
+          width: 25.h,
+          fit: BoxFit.contain,
+        ),
+        const SizedBox(
+          height: 5,
+        ),
+        TextButton(
+          onPressed: () {},
+          style: ButtonStyle(
+            overlayColor: WidgetStateProperty.all(Colors.transparent),
+            padding: WidgetStateProperty.all(const EdgeInsets.all(0)),
           ),
-          const SizedBox(
-            height: 5,
+          onHover: (value) {
+            if (value) {
+              setState(() {
+                textStyle = textStyle.copyWith(
+                  color: Colors.lightBlueAccent,
+                );
+              });
+            } else {
+              setState(() {
+                textStyle = textStyle.copyWith(
+                  color: Colors.black,
+                );
+              });
+            }
+          },
+          child: Text(
+            widget.title,
+            style: textStyle,
           ),
-          TextButton(
-            onPressed: () {},
-            style: ButtonStyle(
-              overlayColor: WidgetStateProperty.all(Colors.transparent),
-              padding: WidgetStateProperty.all(const EdgeInsets.all(0)),
-            ),
-            onHover: (value) {
-              if (value) {
-                setState(() {
-                  textStyle = textStyle.copyWith(
-                    color: Colors.lightBlueAccent,
-                  );
-                });
-              } else {
-                setState(() {
-                  textStyle = textStyle.copyWith(
-                    color: Colors.black,
-                  );
-                });
-              }
-            },
-            child: Text(
-              widget.title,
-              style: textStyle,
-            ),
-          ),
-          Opacity(
-            opacity: isHovered ? 1 : 0,
-            child: Text(
-              widget.content,
-              style: TextUtils.defaultStyle().copyWith(fontSize: 14.spMin),
-            ),
-          ),
-        ],
-      ),
+        ),
+        Text(
+          widget.content,
+          style: TextUtils.defaultStyle().copyWith(fontSize: 14.spMin),
+        ),
+      ],
     );
   }
 }

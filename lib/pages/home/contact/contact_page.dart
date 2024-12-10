@@ -10,9 +10,9 @@ class ContactHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
-      mobile: (BuildContext context) =>   const ResponsiveViewMobile(child: ContactHomePageBodyDesk()),
+      mobile: (BuildContext context) =>   const ResponsiveViewMobile(child: ContactHomePageBodyMobile()),
       desktop: (BuildContext context) =>   const ResponsiveViewDesktop(child: ContactHomePageBodyDesk()),
-      tablet: (BuildContext context) =>   const ResponsiveViewTablet(child: ContactHomePageBodyDesk()),
+      tablet: (BuildContext context) =>   const ResponsiveViewMobile(child: ContactHomePageBodyMobile()),
     );
   }
 }

@@ -60,8 +60,8 @@ class PrimaryButtonBodyMobile extends StatelessWidget {
         backgroundColor: WidgetStateProperty.all<Color>(Colors.lightBlueAccent),
         padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
           const EdgeInsets.symmetric(
-            vertical: 20,
-            horizontal: 50,
+            vertical: 17,
+            horizontal: 55,
           ),
         ),
         shape: WidgetStateProperty.all<RoundedRectangleBorder>(
@@ -83,7 +83,7 @@ class PrimaryButtonBodyMobile extends StatelessWidget {
         title,
         style: TextStyle(
           color: Colors.white,
-          fontSize: 6.spMax,
+          fontSize: 14.spMin,
           fontWeight: FontWeight.w400,
           fontFamily: TextUtils.fontFamily(FontSourceSansPro.semiBold),
         ),

@@ -17,7 +17,8 @@ class DropdownComponent extends StatefulWidget {
     required this.items,
     required this.onChanged,
     required this.dropdownTextItemStyle,
-    this.selectedValue, required this.title,
+    this.selectedValue,
+    required this.title,
   }) : super(key: key);
 
   @override
@@ -70,7 +71,11 @@ class _DropdownComponentState extends State<DropdownComponent> {
               value: selectedValue,
               hint: Text(
                 widget.title,
-                style: TextUtils.defaultStyle().copyWith(color: Colors.grey[400], fontWeight: FontWeight.w300),
+                style: TextUtils.defaultStyle().copyWith(
+                  color: Colors.grey[400],
+                  fontWeight: FontWeight.w300,
+                  fontSize: 14.spMin,
+                ),
               ),
               buttonStyleData: ButtonStyleData(
                 padding: const EdgeInsets.only(right: 14),
@@ -86,7 +91,7 @@ class _DropdownComponentState extends State<DropdownComponent> {
                 icon: const Icon(
                   Icons.keyboard_arrow_down_outlined,
                 ),
-                iconSize: 6.sp,
+                iconSize: 24.spMin,
                 iconEnabledColor: Colors.black,
                 iconDisabledColor: Colors.grey,
               ),

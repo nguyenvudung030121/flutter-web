@@ -116,6 +116,24 @@ class NavbarMob extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
+            IconButton(
+              alignment: Alignment.topRight,
+              icon: const Icon(
+                FontAwesomeIcons.bars,
+              ),
+              onPressed: () {
+                Scaffold.of(context).openEndDrawer();
+              },
+            ),
+            InkWell(
+              mouseCursor: WidgetStateMouseCursor.clickable,
+              splashColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              onTap: () {
+                LandingPageRoute().replace(context);
+              },
+              child: const NavbarLogo(),
+            ),
             Visibility(
               visible: false,
               child: IconButton(
@@ -127,24 +145,6 @@ class NavbarMob extends StatelessWidget {
                   Scaffold.of(context).openEndDrawer();
                 },
               ),
-            ),
-            InkWell(
-              mouseCursor: WidgetStateMouseCursor.clickable,
-              splashColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              onTap: () {
-                LandingPageRoute().replace(context);
-              },
-              child: const NavbarLogo(),
-            ),
-            IconButton(
-              alignment: Alignment.topRight,
-              icon: const Icon(
-                FontAwesomeIcons.bars,
-              ),
-              onPressed: () {
-                Scaffold.of(context).openEndDrawer();
-              },
             ),
           ],
         ),

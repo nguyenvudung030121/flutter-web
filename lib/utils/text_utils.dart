@@ -34,10 +34,10 @@ class TextUtils {
     return TextStyle(
         fontSize: 11.sp,
         color: Colors.lightBlueAccent,
-        fontWeight: FontWeight.w800,
+        fontWeight: FontWeight.w400,
         height: 1.2,
         fontFamily: 'AlfaSlabOne',
-        letterSpacing: 3);
+        letterSpacing: 2);
   }
 
   static TextStyle contentStyle() {

@@ -162,7 +162,7 @@ class _WhatWeDoBodyMobileState extends State<WhatWeDoBodyMobile> {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       double imageHeight = constraints.maxWidth >= 800
-          ? MediaQuery.of(context).size.height * 0.7
+          ? MediaQuery.of(context).size.height * 0.8
           : MediaQuery.of(context).size.height * 0.5;
       return Padding(
         padding: const EdgeInsets.symmetric(horizontal: SpacingUtils.medium),
@@ -171,8 +171,8 @@ class _WhatWeDoBodyMobileState extends State<WhatWeDoBodyMobile> {
           children: [
             Image.memory(
               imageBytes,
-              fit: BoxFit.contain,
-              width: MediaQuery.of(context).size.width * 0.5,
+              fit: BoxFit.fill,
+              width: MediaQuery.of(context).size.width * 0.7,
               height: imageHeight,
             ),
             const SizedBox(
@@ -244,7 +244,7 @@ class _WhatWeDoBodyMobileState extends State<WhatWeDoBodyMobile> {
         Text(
           StringConstants.whatWeDoContent,
           style: TextUtils.contentStyle().copyWith(
-            fontSize: 7.spMax,
+            fontSize: 14.spMin,
           ),
         ),
         const SizedBox(

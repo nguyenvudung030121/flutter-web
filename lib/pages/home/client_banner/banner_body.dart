@@ -68,10 +68,9 @@ class BannerBodyMobile extends StatelessWidget {
 
         return Container(
           width: constraints.maxWidth,
-          padding: const EdgeInsets.symmetric(horizontal: 30),
           constraints:  BoxConstraints(
-            minHeight: 180.h,
-            maxHeight: 400,
+            minHeight: 160.h,
+            maxHeight: 300.h,
           ),
           decoration: BoxDecoration(
             color: Colors.grey[200],
@@ -89,12 +88,13 @@ class BannerBodyMobile extends StatelessWidget {
   Widget buildImageContainer(BuildContext context, String imageUrl) {
     return Container(
       constraints: BoxConstraints(
-        minWidth: 20.w,
-        maxWidth: 80.w,
+        minWidth: 50.w,
+        maxWidth: 100.w,
       ),
+      height: 120.h,
       child: Image.asset(
         imageUrl,
-        fit: BoxFit.cover,
+        fit: BoxFit.contain,
       ),
     );
   }

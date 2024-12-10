@@ -49,7 +49,7 @@ class _ContactHomePageBodyDeskState extends State<ContactHomePageBodyDesk> {
               children: [
                 SelectableText(StringConstants.letUsTake, style: TextUtils.headerStyle().copyWith(color: Colors.black)),
                 const SizedBox(height: 20),
-                Text(StringConstants.letUsTakeContent, style: TextUtils.defaultStyle()),
+                Text(StringConstants.letUsTakeContent, style: TextUtils.defaultStyle().copyWith(fontSize: 14.spMin)),
                 const SizedBox(height: 10),
                 Row(
                   children: [
@@ -463,25 +463,25 @@ class _ContactHomePageBodyMobile extends State<ContactHomePageBodyMobile> {
           RichText(
             text: TextSpan(
               text: 'This site is protected by reCAPTCHA and the Google ',
-              style: TextUtils.defaultStyle().copyWith(fontSize: 9.sp),
+              style: TextUtils.defaultStyle().copyWith(fontSize: 14.spMin),
               children: [
                 TextSpan(
                   text: 'Privacy Policy',
-                  style: TextUtils.linkStyle().copyWith(fontSize: 9.sp),
+                  style: TextUtils.defaultStyle().copyWith(fontSize: 14.spMin),
                   recognizer: TapGestureRecognizer()..onTap = () {},
                 ),
                 TextSpan(
                   text: ' and ',
-                  style: TextUtils.defaultStyle().copyWith(fontSize: 9.sp),
+                  style: TextUtils.defaultStyle().copyWith(fontSize: 14.spMin),
                 ),
                 TextSpan(
                   text: 'Terms of Service',
-                  style: TextUtils.linkStyle().copyWith(fontSize: 9.sp),
+                  style: TextUtils.defaultStyle().copyWith(fontSize: 14.spMin),
                   recognizer: TapGestureRecognizer()..onTap = () {},
                 ),
                 TextSpan(
                   text: ' apply.',
-                  style: TextUtils.defaultStyle().copyWith(fontSize: 9.sp),
+                  style: TextUtils.defaultStyle().copyWith(fontSize: 14.spMin),
                 ),
               ],
             ),

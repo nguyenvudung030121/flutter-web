@@ -10,9 +10,9 @@ class WhoAreWePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
-      mobile: (BuildContext context) => const ResponsiveViewMobile(child: WhoWeAreBodyDesk()),
+      mobile: (BuildContext context) => const ResponsiveViewMobile(child: WhoWeAreBodyMobile()),
       desktop: (BuildContext context) => const ResponsiveViewDesktop(child: WhoWeAreBodyDesk()),
-      tablet: (BuildContext context) => const ResponsiveViewMobile(child: WhoWeAreBodyDesk()),
+      tablet: (BuildContext context) => const ResponsiveViewMobile(child: WhoWeAreBodyMobile()),
     );
   }
 }

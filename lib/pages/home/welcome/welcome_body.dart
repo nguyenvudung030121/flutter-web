@@ -146,14 +146,14 @@ class WelcomePageMob extends StatelessWidget {
             'assets/images/masthead.png',
           ),
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
           Text(
             StringConstants.yourPropTech,
             style: TextUtils.headerStyle().copyWith(fontSize: 15.spMax),
           ),
           const SizedBox(
-            height: 30,
+            height: 20,
           ),
           Text.rich(
             TextSpan(
@@ -213,8 +213,8 @@ class WelcomePageMob extends StatelessWidget {
             children: [
               Image.asset(
                 'assets/images/top_clutch_singapore.png',
-                width: 50.w,
-                height: 120.h,
+                width: 70.w,
+                height: 100.h,
                 fit: BoxFit.fill,
               ),
               const SizedBox(
@@ -222,8 +222,8 @@ class WelcomePageMob extends StatelessWidget {
               ),
               Image.asset(
                 'assets/images/top_clutch_malaysia.png',
-                width: 50.w,
-                height: 120.h,
+                width: 70.w,
+                height: 100.h,
                 fit: BoxFit.fill,
               ),
             ],

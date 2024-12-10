@@ -144,15 +144,15 @@ class FeaturedWorkBodyMobile extends StatelessWidget {
             ),
           ),
           const SizedBox(
-            height: SpacingUtils.small,
+            height: 10,
           ),
           Text(
             StringConstants.featuredWorkDescription,
-            style: TextUtils.contentStyle().copyWith(fontSize: 7.spMax),
+            style: TextUtils.contentStyle().copyWith(fontSize: 14.spMin),
             textAlign: TextAlign.start,
           ),
           const SizedBox(
-            height: 10,
+            height: 15,
           ),
           ListView.separated(
             shrinkWrap: true,
@@ -166,7 +166,7 @@ class FeaturedWorkBodyMobile extends StatelessWidget {
             },
           ),
           const SizedBox(
-            height: SpacingUtils.small,
+            height: 10,
           ),
           Center(
             child: PrimaryButton(

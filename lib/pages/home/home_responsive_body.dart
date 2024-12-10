@@ -61,7 +61,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                       );
                     }
                   },
-                  icon:  Icon(Icons.keyboard_arrow_down_rounded, size: 20.sp),
+                  icon:  Icon(Icons.keyboard_arrow_down_rounded, size: 55.spMin),
                 ),
               ],
             ),
@@ -74,7 +74,7 @@ class _HomeDesktopState extends State<HomeDesktop> {
                 StringConstants.slogan,
                 textAlign: TextAlign.center,
                 style: TextUtils.headerStyle()
-                    .copyWith(fontSize: 22.spMin, fontWeight: FontWeight.w500, color: Colors.black, letterSpacing: 1),
+                    .copyWith(fontSize: 20.spMin, fontWeight: FontWeight.w500, color: Colors.black, letterSpacing: 1),
                 key: dataKey,
               ),
             ),

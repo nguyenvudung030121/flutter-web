@@ -214,7 +214,7 @@ class _TestimonialsBodyMobile extends State<TestimonialsBodyMobile> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Icon(Icons.message_outlined, color: Colors.black, size: 5.sp),
+                        Icon(Icons.message_outlined, color: Colors.black, size: 14.sp),
                         const SizedBox(
                           width: 20,
                         ),

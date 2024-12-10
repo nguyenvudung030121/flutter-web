@@ -10,9 +10,9 @@ class PrimaryButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
-      mobile: (BuildContext context) =>  ResponsiveViewMobile(child: PrimaryButtonBodyDesk(title: title, onPressed: onPressed)),
+      mobile: (BuildContext context) =>  ResponsiveViewMobile(child: PrimaryButtonBodyMobile(title: title, onPressed: onPressed)),
       desktop: (BuildContext context) =>  ResponsiveViewDesktop(child: PrimaryButtonBodyDesk(title: title, onPressed: onPressed)),
-      tablet: (BuildContext context) =>  ResponsiveViewTablet(child: PrimaryButtonBodyDesk(title: title, onPressed: onPressed)),
+      tablet: (BuildContext context) =>  ResponsiveViewMobile(child: PrimaryButtonBodyMobile(title: title, onPressed: onPressed)),
     );
   }
 }

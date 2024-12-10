@@ -9,9 +9,9 @@ class WhatWeDoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
-      mobile: (BuildContext context) =>   const ResponsiveViewMobile(child: WhatWeDoBodyDesk()),
+      mobile: (BuildContext context) =>   const ResponsiveViewMobile(child: WhatWeDoBodyMobile()),
       desktop: (BuildContext context) =>   const ResponsiveViewDesktop(child: WhatWeDoBodyDesk()),
-      tablet: (BuildContext context) =>   const ResponsiveViewTablet(child: WhatWeDoBodyDesk()),
+      tablet: (BuildContext context) =>   const ResponsiveViewMobile(child: WhatWeDoBodyMobile()),
     );
   }
 }

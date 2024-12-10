@@ -9,9 +9,9 @@ class FeaturedWorkPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenTypeLayout.builder(
-      mobile: (BuildContext context) =>  ResponsiveViewMobile(child: FeaturedWorkBodyDesk()),
-      desktop: (BuildContext context) =>  ResponsiveViewDesktop(child: FeaturedWorkBodyDesk()),
-      tablet: (BuildContext context) =>  ResponsiveViewTablet(child: FeaturedWorkBodyDesk()),
+      mobile: (BuildContext context) =>  const ResponsiveViewMobile(child: FeaturedWorkBodyMobile()),
+      desktop: (BuildContext context) =>  const ResponsiveViewDesktop(child: FeaturedWorkBodyDesk()),
+      tablet: (BuildContext context) =>  const ResponsiveViewMobile(child: FeaturedWorkBodyMobile()),
     );
   }
 }

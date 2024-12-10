@@ -5,16 +5,19 @@ class HoverImage extends StatelessWidget {
   const HoverImage({
     Key? key,
     required this.imageUrl,
-    required this.hoverImageUrl, this.isBigImage = false,
+    required this.hoverImageUrl,
+    this.isBigImage = false,
+    this.isMobileImage = false,
   }) : super(key: key);
   final String imageUrl;
   final String hoverImageUrl;
   final bool isBigImage;
+  final bool isMobileImage;
 
   @override
   Widget build(BuildContext context) {
-    final imageHeight = isBigImage ? MediaQuery.of(context).size.height * 0.4 : MediaQuery.of(context).size.height *
-        0.3;
+    final imageHeight = isMobileImage ? MediaQuery.of(context).size.height * 0.53 :
+        isBigImage ? MediaQuery.of(context).size.height * 0.4 : MediaQuery.of(context).size.height * 0.3;
     return HoverCrossFadeWidget(
       cursor: SystemMouseCursors.click,
       firstChild: SizedBox(

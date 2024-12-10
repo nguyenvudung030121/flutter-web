@@ -148,6 +148,13 @@ class WelcomePageMob extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
+          Text(
+            StringConstants.yourPropTech,
+            style: TextUtils.headerStyle().copyWith(fontSize: 15.spMax),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
           Text.rich(
             TextSpan(
               style: TextUtils.contentStyleMobile(),

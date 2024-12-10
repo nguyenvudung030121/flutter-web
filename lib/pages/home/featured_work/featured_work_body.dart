@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_webapp/component/primary_button/primary_button.dart';
-import 'package:hovering/hovering.dart';
 
 import '../../../component/hover_image.dart';
 import '../../../utils/utils.dart';
@@ -14,7 +14,7 @@ class FeaturedWorkBodyDesk extends StatelessWidget {
     var imageHeight = MediaQuery.of(context).size.height * 0.3;
     var imageHeight2 = MediaQuery.of(context).size.height * 0.4;
     final List<StaggeredGridTile> cardTile = [
-       StaggeredGridTile.extent(
+      StaggeredGridTile.extent(
         crossAxisCellCount: 2,
         mainAxisExtent: imageHeight,
         child: const HoverImage(
@@ -22,7 +22,7 @@ class FeaturedWorkBodyDesk extends StatelessWidget {
           hoverImageUrl: 'assets/images/ipc_logo.png',
         ),
       ),
-       StaggeredGridTile.extent(
+      StaggeredGridTile.extent(
         crossAxisCellCount: 2,
         mainAxisExtent: imageHeight,
         child: const HoverImage(
@@ -30,7 +30,7 @@ class FeaturedWorkBodyDesk extends StatelessWidget {
           hoverImageUrl: 'assets/images/workct_pro_logo.png',
         ),
       ),
-       StaggeredGridTile.extent(
+      StaggeredGridTile.extent(
         crossAxisCellCount: 2,
         mainAxisExtent: imageHeight,
         child: const HoverImage(
@@ -91,6 +91,89 @@ class FeaturedWorkBodyDesk extends StatelessWidget {
             height: SpacingUtils.small,
           ),
           PrimaryButton(title: StringConstants.viewMoreProjects, onPressed: () {}),
+        ],
+      ),
+    );
+  }
+}
+
+class FeaturedWorkBodyMobile extends StatelessWidget {
+  const FeaturedWorkBodyMobile({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+
+    final List<HoverImage> hoverImageList = [
+      const HoverImage(
+        imageUrl: 'assets/images/ipc_resized.png',
+        hoverImageUrl: 'assets/images/ipc_logo.png',
+        isMobileImage: true,
+      ),
+      const HoverImage(
+        imageUrl: 'assets/images/workct_pro_resized.png',
+        hoverImageUrl: 'assets/images/workct_pro_logo.png',
+        isMobileImage: true,
+      ),
+      const HoverImage(
+        imageUrl: 'assets/images/cs-hitb-resized.png',
+        hoverImageUrl: 'assets/images/HITB_logo.png',
+        isMobileImage: true,
+      ),
+      const HoverImage(
+        imageUrl: 'assets/images/fave-resized.png',
+        hoverImageUrl: 'assets/images/fave_reclogo.png',
+        isMobileImage: true,
+      ),
+      const HoverImage(
+        imageUrl: 'assets/images/cs-experian-resized.png',
+        hoverImageUrl: 'assets/images/experian_reclogo.png',
+        isMobileImage: true,
+      ),
+    ];
+
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      padding: const EdgeInsets.symmetric(horizontal: SpacingUtils.medium),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: Text(
+              StringConstants.featuredWork,
+              style: TextUtils.headerStyle().copyWith(fontSize: 15.spMax),
+            ),
+          ),
+          const SizedBox(
+            height: SpacingUtils.small,
+          ),
+          Text(
+            StringConstants.featuredWorkDescription,
+            style: TextUtils.contentStyle().copyWith(fontSize: 7.spMax),
+            textAlign: TextAlign.start,
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          ListView.separated(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            itemCount: hoverImageList.length,
+            separatorBuilder: (context, index) => const SizedBox(
+              height: SpacingUtils.small,
+            ),
+            itemBuilder: (context, index) {
+              return hoverImageList[index];
+            },
+          ),
+          const SizedBox(
+            height: SpacingUtils.small,
+          ),
+          Center(
+            child: PrimaryButton(
+              title: StringConstants.viewMoreProjects,
+              onPressed: () {},
+            ),
+          ),
         ],
       ),
     );

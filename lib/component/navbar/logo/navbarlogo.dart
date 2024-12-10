@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_webapp/utils/utils.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
@@ -20,18 +21,9 @@ class NavbarLogoMob extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-        height: 80,
-        child: Row(
-          children: [
-            Text(
-              StringConstants.appName,
-              style: TextStyle(color: Colors.blueAccent, fontSize: 20, fontFamily: 'Agustina'),
-            ),
-          ],
-        )
-        //Image.asset('assets/images/logo.png'),
-        );
+    return SvgPicture.asset(
+      'assets/images/maddie_logo.svg',
+    );
   }
 }
 
@@ -40,18 +32,8 @@ class NavbarLogoDesk extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-        height: 80,
-        width: MediaQuery.of(context).size.width * 0.2,
-        child: const Row(
-          children: [
-            Text(
-              StringConstants.appName,
-              style: TextStyle(color: Colors.blueAccent, fontSize: 30, fontFamily: 'Agustina'),
-            ),
-          ],
-        )
-        //Image.asset('assets/images/logo.png'),
-        );
+    return SvgPicture.asset(
+      'assets/images/maddie_logo.svg',
+    );
   }
 }

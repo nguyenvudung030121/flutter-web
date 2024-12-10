@@ -56,6 +56,8 @@ class NavbarDesktop extends StatelessWidget {
                 mouseCursor: WidgetStateMouseCursor.clickable,
                 splashColor: Colors.transparent,
                 hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                focusColor: Colors.transparent,
                 onTap: () {
                   LandingPageRoute().replace(context);
                 },
@@ -105,21 +107,21 @@ class NavbarDesktop extends StatelessWidget {
 
 class NavbarMob extends StatelessWidget {
   const NavbarMob({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 30),
       child: SizedBox(
-        height: 40,
+        height: 35,
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             IconButton(
               alignment: Alignment.topRight,
-              icon: const Icon(
+              icon:  Icon(
                 FontAwesomeIcons.bars,
+                color: Colors.grey[700],
               ),
               onPressed: () {
                 Scaffold.of(context).openEndDrawer();
@@ -129,6 +131,8 @@ class NavbarMob extends StatelessWidget {
               mouseCursor: WidgetStateMouseCursor.clickable,
               splashColor: Colors.transparent,
               hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
+              focusColor: Colors.transparent,
               onTap: () {
                 LandingPageRoute().replace(context);
               },
@@ -178,6 +182,7 @@ class _NavbarItemState extends State<NavbarItem> {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {
+        Navigator.of(context).pop();
         switch (widget.navbarRoutes) {
           case NavbarRoutes.home:
             LandingPageRoute().replace(context);

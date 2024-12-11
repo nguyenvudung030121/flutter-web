@@ -74,7 +74,7 @@ class FeaturedWorkBodyDesk extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.6,
             child: Text(
               StringConstants.featuredWorkDescription,
-              style: TextUtils.contentStyle().copyWith(fontSize: 14.spMin),
+              style: TextUtils.contentStyle().copyWith(fontSize: 23.sp),
               textAlign: TextAlign.center,
             ),
           ),

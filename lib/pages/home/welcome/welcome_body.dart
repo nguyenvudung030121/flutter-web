@@ -10,9 +10,6 @@ class WelcomePageDesk extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var textStyle = TextUtils.contentStyle();
-    var textLinkStyle = TextUtils.contentStyle()
-        .copyWith(color: Colors.lightBlueAccent, fontWeight: FontWeight.w700, fontSize: 14.spMax);
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: SpacingUtils.extraLarge),
       child: Row(
@@ -21,14 +18,6 @@ class WelcomePageDesk extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                const Text(
-                  StringConstants.userName,
-                  style: TextStyle(fontWeight: FontWeight.w800, height: 1.3, fontSize: 50),
-                  textAlign: TextAlign.center,
-                ),
-                const SizedBox(
-                  height: 30,
-                ),
                 Image.asset(
                   'assets/images/masthead.png',
                 ),

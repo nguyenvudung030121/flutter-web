@@ -19,13 +19,17 @@ class FooterDesk extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-          'Madison Technologies',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal, color: Colors.grey.shade500),
+            'Madison Technologies',
+            style: TextStyle(
+              color: Colors.lightBlueAccent,
+              fontSize: 20,
+              fontFamily: 'Agustina',
+            ),
           )
         ],
       ),

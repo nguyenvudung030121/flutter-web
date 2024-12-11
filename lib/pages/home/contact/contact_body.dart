@@ -49,7 +49,7 @@ class _ContactHomePageBodyDeskState extends State<ContactHomePageBodyDesk> {
               children: [
                 SelectableText(StringConstants.letUsTake, style: TextUtils.headerStyle().copyWith(color: Colors.black)),
                 const SizedBox(height: 20),
-                Text(StringConstants.letUsTakeContent, style: TextUtils.defaultStyle().copyWith(fontSize: 14.spMin)),
+                Text(StringConstants.letUsTakeContent, style: TextUtils.defaultStyle().copyWith(fontSize: 23)),
                 const SizedBox(height: 10),
                 Row(
                   children: [

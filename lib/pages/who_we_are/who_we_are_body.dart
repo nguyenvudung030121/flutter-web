@@ -155,7 +155,6 @@ class WhoWeAreBodyMobile extends StatelessWidget {
                         return Container(
                           padding: const EdgeInsets.all(15),
                           width: 120.w,
-                          height: 160.h,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),

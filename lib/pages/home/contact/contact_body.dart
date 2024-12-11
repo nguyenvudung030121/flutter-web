@@ -358,63 +358,68 @@ class _ContactHomePageBodyMobile extends State<ContactHomePageBodyMobile> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: SpacingUtils.medium),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            StringConstants.letUsTake,
-            style: TextUtils.headerStyle().copyWith(
-              color: Colors.black,
-              fontSize: 15.spMax,
-              letterSpacing: 1,
-            ),
-          ),
-          const SizedBox(height: 10),
-          Text(
-            StringConstants.letUsTakeContent,
-            style: TextUtils.defaultStyle().copyWith(fontSize: 14.spMin),
-          ),
-          const SizedBox(height: 10),
-          Row(
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        bool isSmallScreen = constraints.maxWidth < 400;
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: SpacingUtils.medium),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Icon(Icons.mail_outline_rounded, color: Colors.lightBlueAccent, size: 34.spMin),
-              const SizedBox(width: 10),
-              InkWell(
-                onTap: () {},
-                child: Text(
-                  'hello@madison-technology.com',
-                  style: TextUtils.linkStyle().copyWith(fontSize: 14.spMin),
+              Text(
+                StringConstants.letUsTake,
+                style: TextUtils.headerStyle().copyWith(
+                  color: Colors.black,
+                  fontSize: 17.spMax,
+                  letterSpacing: 1,
                 ),
               ),
-            ],
-          ),
-          const SizedBox(height: 10),
-          Row(
-            children: [
-              Icon(Icons.perm_phone_msg_outlined, color: Colors.lightBlueAccent, size: 34.spMin),
-              const SizedBox(width: 10),
-              InkWell(
-                onTap: () {},
-                child: Text(
-                  'WhatsApp us',
-                  style: TextUtils.linkStyle().copyWith(fontSize: 14.spMin),
-                ),
+              const SizedBox(height: 10),
+              Text(
+                StringConstants.letUsTakeContent,
+                style: TextUtils.defaultStyle().copyWith(fontSize: 15.spMin),
               ),
+              const SizedBox(height: 10),
+              Row(
+                children: [
+                  Icon(Icons.mail_outline_rounded, color: Colors.lightBlueAccent, size: 34.spMin),
+                  const SizedBox(width: 10),
+                  InkWell(
+                    onTap: () {},
+                    child: Text(
+                      'hello@madison-technology.com',
+                      style: TextUtils.linkStyle().copyWith(fontSize: 15.spMin),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              Row(
+                children: [
+                  Icon(Icons.perm_phone_msg_outlined, color: Colors.lightBlueAccent, size: 34.spMin),
+                  const SizedBox(width: 10),
+                  InkWell(
+                    onTap: () {},
+                    child: Text(
+                      'WhatsApp us',
+                      style: TextUtils.linkStyle().copyWith(fontSize: 15.spMin),
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 20),
+              buildContactBox(isSmallScreen)
             ],
           ),
-          const SizedBox(height: 20),
-          buildContactBox()
-        ],
-      ),
+        );
+      }
     );
   }
 
-  Widget buildContactBox() {
+  Widget buildContactBox(bool isSmallScreen) {
     return Container(
-      padding: const EdgeInsets.all(30),
-      decoration: const BoxDecoration(
+      padding: isSmallScreen ? EdgeInsets.zero : const EdgeInsets.all(20),
+      decoration: isSmallScreen ? null : const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(10)),
         color: Colors.white,
         border: Border.fromBorderSide(

@@ -24,7 +24,7 @@ class FooterDesk extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Made with ❤️ by Dung Nguyen',
+          'Madison Technologies',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal, color: Colors.grey.shade500),
           )
         ],
@@ -38,13 +38,17 @@ class FooterTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            'Made with ❤️ by Dung Nguyen',
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal, color: Colors.grey.shade500),
+            'Madison Technologies',
+            style: TextStyle(
+              color: Colors.lightBlueAccent,
+              fontSize: 20,
+              fontFamily: 'Agustina',
+            ),
           )
         ],
       ),
@@ -59,13 +63,17 @@ class FooterMob extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      child: Center(
+      child: const Center(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Made with ❤️ by Dung Nguyen',
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal, color: Colors.grey.shade500),
+            'Madison Technologies',
+              style: TextStyle(
+                color: Colors.lightBlueAccent,
+                fontSize: 18,
+                fontFamily: 'Agustina',
+              ),
             )
           ],
         ),

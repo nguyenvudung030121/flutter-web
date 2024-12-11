@@ -236,7 +236,7 @@ class _WhatWeDoBodyMobileState extends State<WhatWeDoBodyMobile> {
       children: [
         Text(
           TextUtils.capitalizeFirstCharOfWords(StringConstants.whatWeDo),
-          style: TextUtils.headerStyle().copyWith(fontSize: 15.spMax),
+          style: TextUtils.headerStyle().copyWith(fontSize: 17.spMax),
         ),
         const SizedBox(
           height: 15,
@@ -244,7 +244,7 @@ class _WhatWeDoBodyMobileState extends State<WhatWeDoBodyMobile> {
         Text(
           StringConstants.whatWeDoContent,
           style: TextUtils.contentStyle().copyWith(
-            fontSize: 14.spMin,
+            fontSize: 15.spMin,
           ),
         ),
         const SizedBox(

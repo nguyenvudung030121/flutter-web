@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_webapp/component/dropdown_button.dart';
 
 class BannerBodyDesktop extends StatelessWidget {
   const BannerBodyDesktop({Key? key}) : super(key: key);
@@ -21,8 +19,7 @@ class BannerBodyDesktop extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          buildImageContainer(
-              context, 'assets/images/gamuda_logo.png'),
+          buildImageContainer(context, 'assets/images/gamuda_logo.png'),
           buildImageContainer(context, 'assets/images/fave_logo.png'),
           buildImageContainer(context, 'assets/images/experian_logo.png'),
           buildImageContainer(context, 'assets/images/koinworks_logo.png'),
@@ -51,31 +48,34 @@ class BannerBodyMobile extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         int imageCount;
-        if (constraints.maxWidth >= 1000) {
+        bool isMobileView = false;
+        if (constraints.maxWidth >= 700) {
           imageCount = 4;
-        } else if (constraints.maxWidth >= 400) {
-          imageCount = 3;
+          isMobileView = false;
         } else {
-          imageCount = 2; // Default to 2 images for smaller screens
+          imageCount = 3;
+          isMobileView = true;
         }
 
         List<Widget> images = [
-          buildImageContainer(context, 'assets/images/gamuda_logo.png'),
-          buildImageContainer(context, 'assets/images/fave_logo.png'),
-          buildImageContainer(context, 'assets/images/experian_logo.png'),
-          buildImageContainer(context, 'assets/images/koinworks_logo.png'),
+          buildImageContainer(context, 'assets/images/gamuda_logo.png', isMobileView: isMobileView),
+          buildImageContainer(context, 'assets/images/fave_logo.png', isMobileView: isMobileView),
+          buildImageContainer(context, 'assets/images/experian_logo.png', isMobileView: isMobileView),
+          buildImageContainer(context, 'assets/images/koinworks_logo.png', isMobileView: isMobileView),
         ];
 
         return Container(
           width: constraints.maxWidth,
-          constraints:  BoxConstraints(
-            minHeight: 160.h,
-            maxHeight: 300.h,
+          constraints: const BoxConstraints(
+            minHeight: 160,
+            maxHeight: 300,
           ),
           decoration: BoxDecoration(
             color: Colors.grey[200],
           ),
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize: MainAxisSize.max,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: images.take(imageCount).toList(),
           ),
@@ -84,14 +84,12 @@ class BannerBodyMobile extends StatelessWidget {
     );
   }
 
-
-  Widget buildImageContainer(BuildContext context, String imageUrl) {
+  Widget buildImageContainer(BuildContext context, String imageUrl, {bool isMobileView = false}) {
     return Container(
       constraints: BoxConstraints(
-        minWidth: 50.w,
-        maxWidth: 100.w,
+        minWidth: 80,
+        maxWidth: isMobileView ? 130 : 80.w,
       ),
-      height: 120.h,
       child: Image.asset(
         imageUrl,
         fit: BoxFit.contain,
@@ -99,4 +97,3 @@ class BannerBodyMobile extends StatelessWidget {
     );
   }
 }
-

@@ -74,7 +74,7 @@ class FeaturedWorkBodyDesk extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.6,
             child: Text(
               StringConstants.featuredWorkDescription,
-              style: TextUtils.contentStyle().copyWith(fontSize: 23),
+              style: TextUtils.contentStyle().copyWith(fontSize: 14.spMin),
               textAlign: TextAlign.center,
             ),
           ),
@@ -140,7 +140,7 @@ class FeaturedWorkBodyMobile extends StatelessWidget {
           Center(
             child: Text(
               StringConstants.featuredWork,
-              style: TextUtils.headerStyle().copyWith(fontSize: 15.spMax),
+              style: TextUtils.headerStyle().copyWith(fontSize: 17.spMax),
             ),
           ),
           const SizedBox(
@@ -148,7 +148,7 @@ class FeaturedWorkBodyMobile extends StatelessWidget {
           ),
           Text(
             StringConstants.featuredWorkDescription,
-            style: TextUtils.contentStyle().copyWith(fontSize: 14.spMin),
+            style: TextUtils.contentStyle().copyWith(fontSize: 15.spMin),
             textAlign: TextAlign.start,
           ),
           const SizedBox(

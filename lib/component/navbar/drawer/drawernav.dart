@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_webapp/config/config.dart';
 import 'package:flutter_webapp/utils/utils.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -28,69 +29,73 @@ class CustomDrawer extends StatelessWidget {
           children: <Widget>[
             DrawerHeader(
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   IconButton(
                     onPressed: () => Navigator.of(context).pop(),
                     icon: Icon(Icons.close, color: Colors.grey[700], size: 30),
                   ),
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    onTap: () {
-                      LandingPageRoute().replace(context);
-                      Navigator.of(context).pop();
-                    },
-                    child: const Center(
-                      child: Text(
-                        StringConstants.appName,
-                        style: TextStyle(
-                          color: Colors.lightBlueAccent,
-                          fontSize: 30,
-                          fontFamily: 'Agustina',
+                  Expanded(
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      onTap: () {
+                        LandingPageRoute().replace(context);
+                        Navigator.of(context).pop();
+                      },
+                      child: Center(
+                        child: Text(
+                          StringConstants.appName,
+                          style: TextStyle(
+                            color: Colors.lightBlueAccent,
+                            fontSize: 24.spMin,
+                            fontFamily: 'Agustina',
+                          ),
                         ),
                       ),
                     ),
                   ),
-                  Visibility(
-                    visible: false,
-                    child: IconButton(
-                      onPressed: () => Navigator.of(context).pop(),
-                      icon: Icon(Icons.close, color: Colors.grey[700], size: 30),
-                    ),
-                  )
                 ],
               ),
             ),
-            DrawerItem(
-              StringConstants.whoWeAre,
-              FontAwesomeIcons.listCheck,
-              NavbarRoutes.whoWeAre,
-              isSelected: selectedIndex == NavbarRoutes.whoWeAre,
-            ),
-            DrawerItem(
-              StringConstants.whatWeDo,
-              FontAwesomeIcons.graduationCap,
-              NavbarRoutes.whatWeDo,
-              isSelected: selectedIndex == NavbarRoutes.whatWeDo,
-            ),
-            DrawerItem(
-              StringConstants.dedicatedTeam,
-              FontAwesomeIcons.trophy,
-              NavbarRoutes.dedicatedTeam,
-              isSelected: selectedIndex == NavbarRoutes.dedicatedTeam,
-            ),
-            DrawerItem(
-              StringConstants.ourBlog,
-              FontAwesomeIcons.bloggerB,
-              NavbarRoutes.ourBlog,
-              isSelected: selectedIndex == NavbarRoutes.ourBlog,
-            ),
-            DrawerItem(
-              StringConstants.contact,
-              FontAwesomeIcons.user,
-              NavbarRoutes.contact,
-              isSelected: selectedIndex == NavbarRoutes.contact,
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    DrawerItem(
+                      StringConstants.whoWeAre,
+                      FontAwesomeIcons.listCheck,
+                      NavbarRoutes.whoWeAre,
+                      isSelected: selectedIndex == NavbarRoutes.whoWeAre,
+                    ),
+                    DrawerItem(
+                      StringConstants.whatWeDo,
+                      FontAwesomeIcons.graduationCap,
+                      NavbarRoutes.whatWeDo,
+                      isSelected: selectedIndex == NavbarRoutes.whatWeDo,
+                    ),
+                    DrawerItem(
+                      StringConstants.dedicatedTeam,
+                      FontAwesomeIcons.trophy,
+                      NavbarRoutes.dedicatedTeam,
+                      isSelected: selectedIndex == NavbarRoutes.dedicatedTeam,
+                    ),
+                    DrawerItem(
+                      StringConstants.ourBlog,
+                      FontAwesomeIcons.bloggerB,
+                      NavbarRoutes.ourBlog,
+                      isSelected: selectedIndex == NavbarRoutes.ourBlog,
+                    ),
+                    DrawerItem(
+                      StringConstants.contact,
+                      FontAwesomeIcons.user,
+                      NavbarRoutes.contact,
+                      isSelected: selectedIndex == NavbarRoutes.contact,
+                    ),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
@@ -110,7 +115,7 @@ class DrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 30, top: 60),
+      padding:  EdgeInsets.only(left: 30, top: 30.h),
       child: Row(
         children: <Widget>[
           Icon(

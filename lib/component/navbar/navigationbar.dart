@@ -114,11 +114,15 @@ class NavbarMob extends StatelessWidget {
       child: SizedBox(
         height: 30,
         child: Row(
-          mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             IconButton(
-              alignment: Alignment.topRight,
+              padding:  EdgeInsets.zero,
+              highlightColor: Colors.transparent,
+              splashColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              alignment: Alignment.bottomLeft,
               icon:  Icon(
                 FontAwesomeIcons.bars,
                 color: Colors.grey[700],
